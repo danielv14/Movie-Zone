@@ -38,6 +38,8 @@ app.get('/test', function (req, res) {
 
 // Regular searching
 app.get('/search-all/:search', function (req, res) {
+  console.log('URL: ' + req.url);
+
 
   // Create a variable from the url parameter
   var searchTerm = req.params.search;
@@ -55,6 +57,8 @@ app.get('/search-all/:search', function (req, res) {
 
 // Regular paginated searching
 app.get('/search-all/:search/:page', function (req, res) {
+  console.log('URL: ' + req.url);
+
 
   // Create a variable from the url parameter
   var searchTerm = req.params.search;
@@ -73,6 +77,8 @@ app.get('/search-all/:search/:page', function (req, res) {
 
 // URL for searching by content type
 app.get('/search/:contenttype/:search', function (req, res) {
+  console.log('URL: ' + req.url);
+
 
   // Create a variable from the url parameter
   var searchTerm = req.params.search;
@@ -91,6 +97,8 @@ app.get('/search/:contenttype/:search', function (req, res) {
 
 // Paginated searching
 app.get('/search/:contenttype/:search/:page', function (req, res) {
+  console.log('URL: ' + req.url);
+
 
   // Create a variable from the url parameter
   var searchTerm = req.params.search;
@@ -113,6 +121,8 @@ app.get('/search/:contenttype/:search/:page', function (req, res) {
 
 // Route to fetch specific IMDb ID
 app.get('/imdb/:imdbID', function (req, res) {
+  console.log('URL: ' + req.url);
+
   var imdbID = req.params.imdbID;
   console.log('looking up imdbID: ' + imdbID);
 
@@ -124,6 +134,8 @@ app.get('/imdb/:imdbID', function (req, res) {
 
 });
 
+  console.log('URL: ' + req.url);
+  console.log('URL: ' + req.url);
 
 app.listen(port, function () {
   console.log('Movie Zone server listening on port ' + port +'!');
