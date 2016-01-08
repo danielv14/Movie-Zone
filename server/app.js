@@ -15,8 +15,10 @@ app.get('/', function (req, res) {
     message: 'Welcome to the API!',
     usage: {
       "/test":                                  'test url',
+      '/search-all/:search':                    'search every content type',
+      '/search-all/:search/:page':              'search every content type at a specific page nr',
       "/search/:contenttype/:search":           'search for something in a content group',
-      "/search/:contenttype/:search/:page":     'search a specific page number',
+      "/search/:contenttype/:search/:page":     'search a specific page nr',
       "imdb/:imdbID":                           'look up specific IMDb ID',
 
     }});
