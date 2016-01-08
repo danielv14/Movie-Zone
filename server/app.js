@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
     usage: {
       "/test":                                  'test url',
       "/search/:contenttype/:search":           'search for something in a content group',
-      "/search/:contenttype/:search/:page":     'search a specific page number'
+      "/search/:contenttype/:search/:page":     'search a specific page number',
       "imdb/:imdbID":                           'look up specific IMDb ID',
 
     }});
