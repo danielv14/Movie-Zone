@@ -152,7 +152,7 @@ app.get('/imdb/:imdbID', function (req, res) {
 
 
 // Route to list all seasons within a series. Uses t= flag
-app.get('/series/:series/:season', function (req, res) {
+app.get('/series/title/:series/:season', function (req, res) {
   console.log('URL: ' + req.url);
 
   var series = req.params.series;
