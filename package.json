@@ -12,5 +12,8 @@
   },
   "author": "Daniel V",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/danielvberg/movie-zone#readme"
+  "homepage": "https://bitbucket.org/danielvberg/movie-zone#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
 }
