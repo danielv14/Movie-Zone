@@ -74,6 +74,19 @@ app.get('/search/:contenttype/:search/:page', function (req, res) {
 
 });
 
+// Route to fetch specific IMDb ID
+app.get('/imdb/:imdbID', function (req, res) {
+  var imdbID = req.params.imdbID;
+  console.log('looking up imdbID: ' + imdbID);
+
+  request(baseURL + '?i=' + imdbID + '&tomatoes=true', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.json(JSON.parse(body));
+    }
+  })
+
+});
+
 
 
 
