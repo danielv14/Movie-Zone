@@ -6,7 +6,9 @@ var thePort = 1337;
 
 app.get('/', function (req, res) {
 
- res.json({ message: 'hooray! welcome to our api!' });  
+ res.json({
+    message: 'Welcome to the API!',
+    baseURL: baseURL});
 
 });
 
