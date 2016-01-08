@@ -22,8 +22,7 @@ app.get('/test', function (req, res) {
 
   request(baseURL + '?t=frozen&', function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      //console.log(body);
-      res.send(body);
+      res.json(JSON.parse(body));
     }
   })
 
@@ -38,7 +37,7 @@ app.get('/search/:search', function (req, res) {
 
   request(baseURL + '?s=' + searchTerm + '', function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      res.json(body);
+      res.json(JSON.parse(body));
     }
   })
 
