@@ -17,15 +17,34 @@ app.get('/', function (req, res) {
 
 });
 
+// Test URL for testing request node module
 app.get('/test', function (req, res) {
 
   request(baseURL + '?t=frozen&plot=full', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      //console.log(body);
+      res.send(body);
+    }
+  })
+
+});
+
+// Test URL for testing request node module
+app.get('/search/:search', function (req, res) {
+
+  // Create a variable from the url parameter
+  var searchTerm = req.params.search;
+  console.log('searching for:' + searchTerm);
+
+  request(baseURL + '?s=' + searchTerm + '', function (error, response, body) {
     if (!error && response.statusCode == 200) {
       res.json(body);
     }
   })
 
 });
+
+
 
 app.listen(port, function () {
   console.log('Example app listening on port ' + port +'!');
