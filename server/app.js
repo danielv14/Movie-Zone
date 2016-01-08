@@ -150,7 +150,22 @@ app.get('/series/:series/:season', function (req, res) {
 
 });
 
+// Route to list all seasons within a series. Uses t= flag
+app.get('/series/imdb/:imdbid/:season', function (req, res) {
   console.log('URL: ' + req.url);
+  var series = req.params.imdbid;
+  var season = req.params.season;
+  console.log('looking up series ' + series + ' season ' + season);
+  console.log()
+
+  request(baseURL + '?i=' + series + '&Season=' + season + '', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.json(JSON.parse(body));
+    }
+  })
+
+});
+
 
 app.listen(port, function () {
   console.log('Movie Zone server listening on port ' + port +'!');
