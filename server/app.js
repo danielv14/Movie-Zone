@@ -6,7 +6,8 @@ var app = express();
 var port = 1337;
 
 // Base URL from OMDb api
-var baseURL = 'http://www.omdbapi.com/';
+var baseURL = 'http://www.omdbapi.com';
+
 
 app.get('/', function (req, res) {
 
