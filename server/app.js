@@ -42,6 +42,7 @@ app.get('/search/:contenttype/:search', function (req, res) {
   // Create a variable from the url parameter
   var searchTerm = req.params.search;
   var contentType = req.params.contenttype;
+
   console.log('searching for:' + searchTerm);
   console.log('type is:', contentType + '\n');
 
