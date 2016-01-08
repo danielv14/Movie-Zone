@@ -42,7 +42,7 @@ app.get('/test', function (req, res) {
 
 
 // Regular searching
-app.get('/search-all/:search', function (req, res) {
+app.get('/search/all/:search', function (req, res) {
   console.log('URL: ' + req.url);
 
 
@@ -64,7 +64,7 @@ app.get('/search-all/:search', function (req, res) {
 
 
 // Regular paginated searching
-app.get('/search-all/:search/:page', function (req, res) {
+app.get('/search/all/:search/:page', function (req, res) {
   console.log('URL: ' + req.url);
 
 
@@ -87,7 +87,7 @@ app.get('/search-all/:search/:page', function (req, res) {
 
 
 // URL for searching by content type
-app.get('/search/:contenttype/:search', function (req, res) {
+app.get('/search/type/:contenttype/:search', function (req, res) {
   console.log('URL: ' + req.url);
 
 
@@ -110,7 +110,7 @@ app.get('/search/:contenttype/:search', function (req, res) {
 
 
 // Paginated searching
-app.get('/search/:contenttype/:search/:page', function (req, res) {
+app.get('/search/type/:contenttype/:search/:page', function (req, res) {
   console.log('URL: ' + req.url);
 
 
