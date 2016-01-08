@@ -53,6 +53,26 @@ app.get('/search/:contenttype/:search', function (req, res) {
 
 });
 
+// Paginated searching
+app.get('/search/:contenttype/:search/:page', function (req, res) {
+
+  // Create a variable from the url parameter
+  var searchTerm = req.params.search;
+  var contentType = req.params.contenttype;
+  var page = req.params.page;
+
+  console.log('searching for:' + searchTerm);
+  console.log('type is:', contentType);
+  console.log('page nr is: ' + page + '\n');
+
+  request(baseURL + '?s=' + searchTerm + '&type=' + contentType + '&page=' + page + '', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.json(JSON.parse(body));
+    }
+  })
+
+});
+
 
 
 
