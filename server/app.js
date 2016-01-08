@@ -38,6 +38,9 @@ app.get('/test', function (req, res) {
 
 });
 
+
+
+
 // Regular searching
 app.get('/search-all/:search', function (req, res) {
   console.log('URL: ' + req.url);
@@ -55,6 +58,9 @@ app.get('/search-all/:search', function (req, res) {
   })
 
 });
+
+
+
 
 
 // Regular paginated searching
@@ -77,6 +83,9 @@ app.get('/search-all/:search/:page', function (req, res) {
 
 });
 
+
+
+
 // URL for searching by content type
 app.get('/search/:contenttype/:search', function (req, res) {
   console.log('URL: ' + req.url);
@@ -96,6 +105,9 @@ app.get('/search/:contenttype/:search', function (req, res) {
   })
 
 });
+
+
+
 
 // Paginated searching
 app.get('/search/:contenttype/:search/:page', function (req, res) {
@@ -136,6 +148,9 @@ app.get('/imdb/:imdbID', function (req, res) {
 
 });
 
+
+
+
 // Route to list all seasons within a series. Uses t= flag
 app.get('/series/:series/:season', function (req, res) {
   console.log('URL: ' + req.url);
@@ -152,6 +167,9 @@ app.get('/series/:series/:season', function (req, res) {
 
 });
 
+
+
+
 // Route to list all seasons within a series. Uses t= flag
 app.get('/series/imdb/:imdbid/:season', function (req, res) {
   console.log('URL: ' + req.url);
@@ -167,6 +185,9 @@ app.get('/series/imdb/:imdbid/:season', function (req, res) {
   })
 
 });
+
+
+
 
 
 app.listen(port, function () {
