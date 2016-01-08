@@ -5,7 +5,9 @@ var app = express();
 var thePort = 1337;
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+
+ res.json({ message: 'hooray! welcome to our api!' });  
+
 });
 
 app.listen(thePort, function () {
