@@ -74,6 +74,22 @@ app.get('/search/:contenttype/:search/:page', function (req, res) {
 
 });
 
+// Regular searching
+app.get('/search-all/:search', function (req, res) {
+
+  // Create a variable from the url parameter
+  var searchTerm = req.params.search;
+
+  console.log('searching for:' + searchTerm);
+
+  request(baseURL + '?s=' + searchTerm + '', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.json(JSON.parse(body));
+    }
+  })
+
+});
+
 // Route to fetch specific IMDb ID
 app.get('/imdb/:imdbID', function (req, res) {
   var imdbID = req.params.imdbID;
