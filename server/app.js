@@ -14,14 +14,14 @@ app.get('/', function (req, res) {
  res.json({
     message: 'Welcome to the API!',
     usage: {
-      "/test":                                  'test url',
-      '/search-all/:search':                    'search every content type',
-      '/search-all/:search/:page':              'search every content type at a specific page nr',
-      "/search/:contenttype/:search":           'search for something in a content group',
-      "/search/:contenttype/:search/:page":     'search a specific page nr',
-      "imdb/:imdbID":                           'look up specific IMDb ID',
-      '/series/:series/:season':                'list all episodes within a season. Uses OMDb API title (t=)',
-      '/series/imdb/:imdbid/:season':           'same as above only it uses IMDB ID instead of title (its more accurate)'
+      "/test":                                        'test url',
+      '/search/all/:search':                          'search every content type',
+      '/search/all/:search/:page':                    'search every content type at a specific page nr',
+      "/search/type/:contenttype/:search":            'search for something in a content group',
+      "/search/type/:contenttype/:search/:page":      'search a specific page nr',
+      "imdb/:imdbID":                                 'look up specific IMDb ID',
+      '/series/:series/:season':                      'list all episodes within a season. Uses OMDb API title (t=)',
+      '/series/imdb/:imdbid/:season':                 'same as above only it uses IMDB ID instead of title (its more accurate)'
 
     }});
 
