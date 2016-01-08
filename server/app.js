@@ -20,6 +20,8 @@ app.get('/', function (req, res) {
       "/search/:contenttype/:search":           'search for something in a content group',
       "/search/:contenttype/:search/:page":     'search a specific page nr',
       "imdb/:imdbID":                           'look up specific IMDb ID',
+      '/series/:series/:season':                'list all episodes within a season. Uses OMDb API title (t=)',
+      '/series/imdb/:imdbid/:season':           'same as above only it uses IMDB ID instead of title (its more accurate)'
 
     }});
 
