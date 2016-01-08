@@ -20,7 +20,7 @@ app.get('/', function (req, res) {
 // Test URL for testing request node module
 app.get('/test', function (req, res) {
 
-  request(baseURL + '?t=frozen&plot=full', function (error, response, body) {
+  request(baseURL + '?t=frozen&', function (error, response, body) {
     if (!error && response.statusCode == 200) {
       //console.log(body);
       res.send(body);
