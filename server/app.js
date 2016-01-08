@@ -47,5 +47,5 @@ app.get('/search/:search', function (req, res) {
 
 
 app.listen(port, function () {
-  console.log('Example app listening on port ' + port +'!');
+  console.log('Movie Zone server listening on port ' + port +'!');
 })
