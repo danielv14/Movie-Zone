@@ -1,0 +1,16 @@
+{
+  "name": "movie-zone",
+  "version": "1.0.0",
+  "description": "Webapp to use omdbapi on the serverside and angular on client side",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/danielvberg/movie-zone.git"
+  },
+  "author": "Daniel V",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/danielvberg/movie-zone#readme"
+}
