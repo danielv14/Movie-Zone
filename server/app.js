@@ -133,14 +133,14 @@ app.get('/search/type/:contenttype/:search/:page', function (req, res) {
 
 
 
-// Route to fetch specific IMDb ID
+// Route to fetch specific IMDb ID with full plot
 app.get('/imdb/:imdbID', function (req, res) {
   console.log('URL: ' + req.url);
 
   var imdbID = req.params.imdbID;
   console.log('looking up imdbID: ' + imdbID);
 
-  request(baseURL + '?i=' + imdbID + '&tomatoes=true', function (error, response, body) {
+  request(baseURL + '?i=' + imdbID + '&tomatoes=true&plot=full', function (error, response, body) {
     if (!error && response.statusCode == 200) {
       res.json(JSON.parse(body));
     }
