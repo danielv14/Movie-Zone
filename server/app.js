@@ -16,6 +16,16 @@ app.get('/', function (req, res) {
 
 });
 
+app.get('/test', function (req, res) {
+
+  request(baseURL + '?t=frozen&plot=full', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.json(body);
+    }
+  })
+
+});
+
 app.listen(port, function () {
   console.log('Example app listening on port ' + port +'!');
 })
