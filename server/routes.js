@@ -20,6 +20,8 @@ module.exports = function(app) {
   // Declare router
   var router = express.Router();
 
+  // delcare prefix url for api
+  app.use('/api', router);
 
 
   // Routes
