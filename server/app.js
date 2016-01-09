@@ -1,5 +1,6 @@
 var express = require('express'),
-    app = express();
+    app = express(),
+    port = 1337;
 
 
 // Logger midleware function
@@ -17,10 +18,6 @@ var index =   require('./index')(app);
 var api =     require('./routes/api')(app);
 var user =    require('./routes/user')(app);
 var config =  require('./config')(app);
-
-
-// Port variable
-var port = 1337;
 
 
 app.listen(port, function () {
