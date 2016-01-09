@@ -5,18 +5,19 @@ var request = require('request');
 // Base URL from OMDb api
 var baseURL = 'http://www.omdbapi.com/';
 
-
 // Logger midleware function
 function logger(req,res,next){
   console.log(new Date(), req.method, req.url);
   next();
 }
 
+
 module.exports = function(app) {
 
-
-
+  // invoke logger middleware function
   app.use(logger);
+
+  // Routes
 
   app.get('/', function (req, res) {
 
