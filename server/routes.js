@@ -1,5 +1,5 @@
-var express = require('express');
-var request = require('request');
+var express = require('express'),
+    request = require('request');
 
 
 // Base URL from OMDb api

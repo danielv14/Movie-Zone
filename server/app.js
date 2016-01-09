@@ -1,5 +1,5 @@
-var express = require('express');
-var app = express();
+var express = require('express'),
+    app = express();
 
 // Require other modules (files)
 var router = require('./routes')(app);
