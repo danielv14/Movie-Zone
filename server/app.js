@@ -12,6 +12,7 @@ function logger(req,res,next){
 app.use(logger);
 
 // Require other modules (files)
+var config =  require('./config')(app);
 var index =   require('./index')(app);
 var api =     require('./routes/api')(app);
 var user =    require('./routes/user')(app);
