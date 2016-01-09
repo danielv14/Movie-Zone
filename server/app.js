@@ -1,11 +1,24 @@
 var express = require('express'),
     app = express();
 
+
+// Logger midleware function
+function logger(req,res,next){
+  console.log(new Date(), req.method, req.url);
+  next();
+}
+
+app.use(logger);
+
 // Require other modules (files)
 var index =   require('./index')(app);
 var api =     require('./routes/api')(app);
 var user =    require('./routes/user')(app);
 var config =  require('./config')(app);
+
+
+
+
 
 // Port variable
 var port = 1337;
