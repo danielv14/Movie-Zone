@@ -8,6 +8,7 @@ function logger(req,res,next){
   next();
 }
 
+// Use the logger middleware
 app.use(logger);
 
 // Require other modules (files)
@@ -15,9 +16,6 @@ var index =   require('./index')(app);
 var api =     require('./routes/api')(app);
 var user =    require('./routes/user')(app);
 var config =  require('./config')(app);
-
-
-
 
 
 // Port variable
