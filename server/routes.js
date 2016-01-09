@@ -17,6 +17,11 @@ module.exports = function(app) {
   // invoke logger middleware function
   app.use(logger);
 
+  // Declare router
+  var router = express.Router();
+
+
+
   // Routes
 
   app.get('/', function (req, res) {
