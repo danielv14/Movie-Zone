@@ -26,7 +26,7 @@ module.exports = function(app) {
 
   // Routes
 
-  app.get('/', function (req, res) {
+  router.get('/', function (req, res) {
 
    res.json({
       message: 'Welcome to the API!',
@@ -44,8 +44,10 @@ module.exports = function(app) {
 
   });
 
+
+
   // Test URL for testing request node module
-  app.get('/test', function (req, res) {
+  router.get('/test', function (req, res) {
 
     request(baseURL + '?t=frozen&', function (error, response, body) {
       if (!error && response.statusCode == 200) {
@@ -57,9 +59,8 @@ module.exports = function(app) {
 
 
 
-
   // Regular searching
-  app.get('/search/all/:search', function (req, res) {
+  router.get('/search/all/:search', function (req, res) {
 
     // Create a variable from the url parameter
     var searchTerm = req.params.search;
@@ -78,7 +79,7 @@ module.exports = function(app) {
 
 
   // Regular paginated searching
-  app.get('/search/all/:search/:page', function (req, res) {
+  router.get('/search/all/:search/:page', function (req, res) {
 
     // Create a variable from the url parameter
     var searchTerm = req.params.search;
@@ -97,7 +98,7 @@ module.exports = function(app) {
 
 
   // URL for searching by content type
-  app.get('/search/type/:contenttype/:search', function (req, res) {
+  router.get('/search/type/:contenttype/:search', function (req, res) {
 
     // Create a variable from the url parameter
     var searchTerm = req.params.search;
@@ -116,7 +117,7 @@ module.exports = function(app) {
 
 
   // Paginated searching
-  app.get('/search/type/:contenttype/:search/:page', function (req, res) {
+  router.get('/search/type/:contenttype/:search/:page', function (req, res) {
 
     // Create a variable from the url parameter
     var searchTerm = req.params.search;
@@ -135,7 +136,7 @@ module.exports = function(app) {
 
 
   // Route to fetch specific IMDb ID with full plot
-  app.get('/imdb/:imdbID', function (req, res) {
+  router.get('/imdb/:imdbID', function (req, res) {
 
     var imdbID = req.params.imdbID;
 
@@ -151,7 +152,7 @@ module.exports = function(app) {
 
 
   // Route to list all seasons within a series. Uses t= flag
-  app.get('/series/title/:series/:season', function (req, res) {
+  router.get('/series/title/:series/:season', function (req, res) {
 
     var series = req.params.series;
     var season = req.params.season;
@@ -168,7 +169,7 @@ module.exports = function(app) {
 
 
   // Route to list all seasons within a series. Uses t= flag
-  app.get('/series/imdb/:imdbid/:season', function (req, res) {
+  router.get('/series/imdb/:imdbid/:season', function (req, res) {
     var series = req.params.imdbid;
     var season = req.params.season;
 
