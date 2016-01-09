@@ -1,6 +1,6 @@
 var express = require('express'),
+    app = express(),
     request = require('request');
-
 
 // Base URL from OMDb api
 var baseURL = 'http://www.omdbapi.com/';
