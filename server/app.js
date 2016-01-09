@@ -8,6 +8,13 @@ var port = 1337;
 // Base URL from OMDb api
 var baseURL = 'http://www.omdbapi.com/';
 
+// Logger midleware function
+function logger(req,res,next){
+  console.log(new Date(), req.method, req.url);
+  next();
+}
+
+app.use(logger);
 
 app.get('/', function (req, res) {
 
@@ -43,13 +50,10 @@ app.get('/test', function (req, res) {
 
 // Regular searching
 app.get('/search/all/:search', function (req, res) {
-  console.log('URL: ' + req.url);
-
 
   // Create a variable from the url parameter
   var searchTerm = req.params.search;
 
-  console.log('searching for:' + searchTerm);
 
   request(baseURL + '?s=' + searchTerm + '', function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -65,15 +69,11 @@ app.get('/search/all/:search', function (req, res) {
 
 // Regular paginated searching
 app.get('/search/all/:search/:page', function (req, res) {
-  console.log('URL: ' + req.url);
-
 
   // Create a variable from the url parameter
   var searchTerm = req.params.search;
   var page = req.params.page;
 
-  console.log('searching for:' + searchTerm);
-  console.log('page nr is: ' + page + '\n');
 
   request(baseURL + '?s=' + searchTerm + '&page=' + page + '', function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -88,15 +88,11 @@ app.get('/search/all/:search/:page', function (req, res) {
 
 // URL for searching by content type
 app.get('/search/type/:contenttype/:search', function (req, res) {
-  console.log('URL: ' + req.url);
-
 
   // Create a variable from the url parameter
   var searchTerm = req.params.search;
   var contentType = req.params.contenttype;
 
-  console.log('searching for:' + searchTerm);
-  console.log('type is:', contentType + '\n');
 
   request(baseURL + '?s=' + searchTerm + '&type=' + contentType + '', function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -111,17 +107,12 @@ app.get('/search/type/:contenttype/:search', function (req, res) {
 
 // Paginated searching
 app.get('/search/type/:contenttype/:search/:page', function (req, res) {
-  console.log('URL: ' + req.url);
-
 
   // Create a variable from the url parameter
   var searchTerm = req.params.search;
   var contentType = req.params.contenttype;
   var page = req.params.page;
 
-  console.log('searching for:' + searchTerm);
-  console.log('type is:', contentType);
-  console.log('page nr is: ' + page + '\n');
 
   request(baseURL + '?s=' + searchTerm + '&type=' + contentType + '&page=' + page + '', function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -135,10 +126,8 @@ app.get('/search/type/:contenttype/:search/:page', function (req, res) {
 
 // Route to fetch specific IMDb ID with full plot
 app.get('/imdb/:imdbID', function (req, res) {
-  console.log('URL: ' + req.url);
 
   var imdbID = req.params.imdbID;
-  console.log('looking up imdbID: ' + imdbID);
 
   request(baseURL + '?i=' + imdbID + '&tomatoes=true&plot=full', function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -153,11 +142,9 @@ app.get('/imdb/:imdbID', function (req, res) {
 
 // Route to list all seasons within a series. Uses t= flag
 app.get('/series/title/:series/:season', function (req, res) {
-  console.log('URL: ' + req.url);
 
   var series = req.params.series;
   var season = req.params.season;
-  console.log('looking up series ' + series + ' season ' + season);
 
   request(baseURL + '?t=' + series + '&Season=' + season + '', function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -172,11 +159,8 @@ app.get('/series/title/:series/:season', function (req, res) {
 
 // Route to list all seasons within a series. Uses t= flag
 app.get('/series/imdb/:imdbid/:season', function (req, res) {
-  console.log('URL: ' + req.url);
   var series = req.params.imdbid;
   var season = req.params.season;
-  console.log('looking up series ' + series + ' season ' + season);
-  console.log()
 
   request(baseURL + '?i=' + series + '&Season=' + season + '', function (error, response, body) {
     if (!error && response.statusCode == 200) {
