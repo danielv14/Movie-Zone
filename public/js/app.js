@@ -20,5 +20,9 @@
         url: '/contact',
         templateUrl: 'partials/contact.html'
       })
+      .state('test', {
+        url: '/test',
+        templateUrl: 'partials/test.html'
+      })
 
   }]);
