@@ -33,7 +33,7 @@ angular
 
     $http({
       method: 'GET',
-      url: 'http://localhost:1337/api/search/type/movie/harry/2'
+      url: 'http://localhost:1337/api/search/type/movie/harry/1'
     }).then(function successCallback(response) {
       // console.log(typeof(response.data.Search));
       // console.log(response.data.Search);
