@@ -28,3 +28,17 @@ angular
       console.log(response);
     }
   }])
+  // Search controller
+  .controller('searchCtrl', ['$scope', '$http', function($scope, $http) {
+
+    $http({
+      method: 'GET',
+      url: 'http://localhost:1337/api/search/type/movie/harry/2'
+    }).then(function successCallback(response) {
+      // console.log(typeof(response.data.Search));
+      // console.log(response.data.Search);
+      $scope.details = response.data.Search;
+    }), function errorCallback(response) {
+      console.log(response);
+    }
+  }])
