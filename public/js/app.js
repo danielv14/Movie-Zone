@@ -21,5 +21,4 @@
         templateUrl: 'partials/contact.html'
       })
 
-      // Remove hash from url's
-  }])
+  }]);
