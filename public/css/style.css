@@ -1,3 +1,13 @@
 body {
   padding-top: 70px;
 }
+
+.img-small {
+  max-height: 200px;
+  max-width: 100px;
+}
+
+.img-medium {
+  width: 300px;
+  min-height: 400px;
+}
