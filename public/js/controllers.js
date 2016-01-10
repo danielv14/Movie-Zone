@@ -34,7 +34,25 @@ angular
     $scope.search = function() {
       $http({
         method: 'GET',
-        url: 'http://localhost:1337/api/search/all/' + $scope.searchterm + ''
+        url: 'http://localhost:1337/api/search/all/' + $scope.searchterm + '/1'
+      }).then(function successCallback(response) {
+        // console.log(typeof(response.data.Search));
+        // console.log(response.data.Search);
+        $scope.details = response.data.Search;
+      }), function errorCallback(response) {
+        console.log(response);
+      }
+    }
+
+    $scope.previousPage = function() {
+      console.log('previous page');
+    }
+
+    $scope.nextPage = function() {
+      console.log('next page');
+      $http({
+        method: 'GET',
+        url: 'http://localhost:1337/api/search/all/' + $scope.searchterm + '/2'
       }).then(function successCallback(response) {
         // console.log(typeof(response.data.Search));
         // console.log(response.data.Search);
