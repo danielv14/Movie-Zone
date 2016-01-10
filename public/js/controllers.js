@@ -5,8 +5,9 @@ angular
   .controller('testCtrl', ['$scope', '$http', function($scope, $http) {
     $http({
       method: 'GET',
-      url: 'http://www.omdbapi.com/?i=tt2294629'
+      url: 'http://localhost:1337/api/imdb/tt2294629'
     }).then(function successCallback(response) {
+      console.log(response);
       $scope.details = response.data;
     }), function errorCallback(response) {
       console.log(response);
