@@ -28,6 +28,8 @@ angular
   }])
   // Search controller
   .controller('searchCtrl', ['$scope', '$http', function($scope, $http) {
+
+
     // using ng-click to trigger search
     $scope.search = function() {
       $http({
