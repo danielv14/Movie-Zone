@@ -1,13 +1,16 @@
-<h1>Search</h1>
 
 <div ng-controller="searchCtrl">
 
+  <form ng-submit="search()" autocomplete="off">
+
   <div class="input-group">
-        <input type="text" ng-model='searchterm' class="form-control" placeholder="Search for..." id='search'>
-        <span class="input-group-btn">
-          <button class="btn btn-default" id='seachButton' ng-click="search()" type="button">Search</button>
-        </span>
+      <input type="text" ng-model='searchterm' class="form-control" placeholder="Search for..." id='search'>
+      <span class="input-group-btn">
+        <button class="btn btn-default" id='seachButton' ng-click="search()" type="button">Search</button>
+      </span>
   </div><!-- /input-group -->
+</form>
+
 
   <br>
 
