@@ -19,7 +19,6 @@ module.exports = function(app) {
   // Routes
 
   router.get('/', function (req, res) {
-    // res.header('Access-Control-Allow-Origin', '*');
     res.json({
       message: 'Welcome to the API!',
       usage: {
