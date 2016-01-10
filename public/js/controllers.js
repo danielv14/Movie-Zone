@@ -13,3 +13,17 @@ angular
       console.log(response);
     }
   }])
+
+  .controller('imdbObjectCtrl', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams) {
+    var imdbID = $stateParams.imdbID;
+    console.log(imdbID);
+    $http({
+      method: 'GET',
+      url: 'http://localhost:1337/api/imdb/' + imdbID + ''
+    }).then(function successCallback(response) {
+      console.log(response);
+      $scope.details = response.data;
+    }), function errorCallback(response) {
+      console.log(response);
+    }
+  }])
