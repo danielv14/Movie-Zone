@@ -28,15 +28,19 @@ angular
   }])
   // Search controller
   .controller('searchCtrl', ['$scope', '$http', function($scope, $http) {
-
-    $http({
-      method: 'GET',
-      url: 'http://localhost:1337/api/search/type/movie/harry/1'
-    }).then(function successCallback(response) {
-      // console.log(typeof(response.data.Search));
-      // console.log(response.data.Search);
-      $scope.details = response.data.Search;
-    }), function errorCallback(response) {
-      console.log(response);
+    // using ng-click to trigger search
+    $scope.search = function() {
+      $http({
+        method: 'GET',
+        url: 'http://localhost:1337/api/search/all/' + $scope.searchterm + ''
+      }).then(function successCallback(response) {
+        // console.log(typeof(response.data.Search));
+        // console.log(response.data.Search);
+        $scope.details = response.data.Search;
+      }), function errorCallback(response) {
+        console.log(response);
+      }
     }
+
+
   }])
