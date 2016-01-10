@@ -15,7 +15,12 @@
       <a class="btn btn-warning" target="_blank" ng-href='http://www.imdb.com/title/{{details.imdbID}}'>IMDb</a>
     </div>
     <div class="col-md-4">
-      <img ng-src="{{details.Poster}}" alt="{{details.Title}}" class="thumbnail">
+      <div ng-if="details.Poster != 'N/A'">
+        <img ng-src="{{details.Poster}}" alt="{{details.Title}}" class="thumbnail">
+      </div>
+      <div ng-if="details.Poster == 'N/A'">
+        <img src="img/placeholder.png" alt="{{details.Title}}" class="thumbnail img-medium">
+      </div>
     </div>
   </div>
 
