@@ -1,0 +1,52 @@
+<h1>Search</h1>
+
+<div class="input-group">
+      <input type="text" ng-model='searchterm' class="form-control" placeholder="Search for..." id='search'>
+      <span class="input-group-btn">
+        <button class="btn btn-default" id='seachButton' type="button">Search</button>
+      </span>
+</div><!-- /input-group -->
+
+<br>
+<div ng-controller="searchCtrl">
+
+  <div class="row">
+    <div ng-repeat='search in details'>
+      <div class="col-md-12">
+        <div class="media">
+          <div class="media-left">
+            <div ng-if="search.Poster == 'N/A'"> <!-- if a poster is not a url -->
+              <a ng-href="#/imdb/{{search.imdbID}}">
+                <img class="media-object img-small thumbnail" src="img/placeholder.png" alt="...">
+              </a>
+            </div>
+            <div ng-if="search.Poster != 'N/A'"> <!-- if a poster is a url -->
+              <a ng-href="#/imdb/{{search.imdbID}}">
+                <img class="media-object img-small thumbnail" ng-src="{{search.Poster}}" src="img/placeholder.png" alt="...">
+              </a>
+            </div>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">{{search.Title}}</h4>
+            <p>Year: {{search.Year}}</p>
+            <p>Type: {{search.Type}}</p>
+            <a ng-href='#/imdb/{{search.imdbID}}'>Show</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav>
+    <ul class="pager">
+      <li><a href="#">Previous</a></li>
+      <li><a href="#">Next</a></li>
+    </ul>
+  </nav>
+  </div>
+
+
+
+
+
+
+</div>
