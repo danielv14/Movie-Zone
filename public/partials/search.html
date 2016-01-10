@@ -1,14 +1,15 @@
 <h1>Search</h1>
 
-<div class="input-group">
-      <input type="text" ng-model='searchterm' class="form-control" placeholder="Search for..." id='search'>
-      <span class="input-group-btn">
-        <button class="btn btn-default" id='seachButton' type="button">Search</button>
-      </span>
-</div><!-- /input-group -->
-
-<br>
 <div ng-controller="searchCtrl">
+
+  <div class="input-group">
+        <input type="text" ng-model='searchterm' class="form-control" placeholder="Search for..." id='search'>
+        <span class="input-group-btn">
+          <button class="btn btn-default" id='seachButton' ng-click="search()" type="button">Search</button>
+        </span>
+  </div><!-- /input-group -->
+
+  <br>
 
   <div class="row">
     <div ng-repeat='search in details'>
@@ -43,8 +44,6 @@
     </ul>
   </nav>
   </div>
-
-
 
 
 
