@@ -28,5 +28,9 @@
         url: '/imdb/:imdbID',
         templateUrl: 'partials/imdbObject.html'
       })
+      .state('search', {
+        url: '/search',
+        templateUrl : 'partials/search.html'
+      })
 
   }]);
