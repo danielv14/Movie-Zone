@@ -24,5 +24,9 @@
         url: '/test',
         templateUrl: 'partials/test.html'
       })
+      .state('imdbID', {
+        url: '/imdb/:imdbID',
+        templateUrl: 'partials/imdbObject.html'
+      })
 
   }]);
