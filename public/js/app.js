@@ -24,5 +24,9 @@
         url: '/search',
         templateUrl : 'partials/search.html'
       })
+      .state('watchlist', {
+        url: '/watchlist',
+        templateUrl: 'partials/watchlist.html'
+      })
 
   }]);
