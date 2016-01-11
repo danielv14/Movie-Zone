@@ -13,6 +13,7 @@ angular
         url: 'http://localhost:1337/api/search/type/movie/' + $scope.searchterm + '/1'
       }).then(function successCallback(response) {
         $scope.movies = response.data.Search;
+        console.log(response.data.Search);
       }), function errorCallback(response) {
         console.log(response);
       }
