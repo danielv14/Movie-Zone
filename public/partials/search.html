@@ -1,19 +1,22 @@
-
 <div ng-controller="searchCtrl">
 
-  <form ng-submit="search()" autocomplete="off">
+  <div class="jumbotron">
+    <h2 class="text-center">Search OMDb API</h2>
+    <br>
+    <form ng-submit="search()" autocomplete="off">
+      <div class="input-group">
+          <input type="text" ng-model='searchterm' class="form-control" placeholder="Search for..." id='search'>
+          <span class="input-group-btn">
+            <button class="btn btn-default" id='seachButton' ng-click="search()" type="button">Search</button>
+          </span>
+      </div><!-- /input-group -->
+    </form>
+  </div>
 
-  <div class="input-group">
-      <input type="text" ng-model='searchterm' class="form-control" placeholder="Search for..." id='search'>
-      <span class="input-group-btn">
-        <button class="btn btn-default" id='seachButton' ng-click="search()" type="button">Search</button>
-      </span>
-  </div><!-- /input-group -->
-</form>
 
 
   <br>
-  
+
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="/#movies">Movies</a></li>
     <li><a data-toggle="tab" href="/#series">Series</a></li>
@@ -23,7 +26,7 @@
     <div id="movies" class="tab-pane fade in active">
       <br>
       <div ng-repeat='search in movies'>
-        <div class="col-md-12">
+        <div class="col-md-8 scrollit animated bounceInUp">
           <div class="media">
             <div class="media-left">
               <div ng-if="search.Poster == 'N/A'"> <!-- if a poster is not a url -->
@@ -40,7 +43,6 @@
             <div class="media-body">
               <h4 class="media-heading">{{search.Title}}</h4>
               <p>Year: {{search.Year}}</p>
-              <p>Type: {{search.Type}}</p>
               <a ng-href='#/imdb/{{search.imdbID}}'>Show</a>
             </div>
           </div>
@@ -78,7 +80,7 @@
 
   <!-- pagination with new GET-requests -->
   <nav>
-  <ul class="pagination">
+  <ul class="pagination fixed">
     <li><a ng-click="pageOne()">1</a></li>
     <li><a ng-click="pageTwo()">2</a></li>
     <li><a ng-click="pageThree()">3</a></li>
