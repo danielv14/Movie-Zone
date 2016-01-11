@@ -1,6 +1,7 @@
 var express = require('express'),
     app = express(),
-    request = require('request');
+    request = require('request'),
+    r = require('rethinkdb');
 
 
 module.exports = function(app) {
@@ -9,14 +10,14 @@ module.exports = function(app) {
   var router = express.Router();
 
   // delcare prefix url for api
-  app.use('/user', router);
+  app.use('/watchlist', router);
 
 
   // Routes
   router.get('/', function (req, res) {
 
    res.json({
-      message: 'Welcome to /user! Hopefully this will be of use someday with a MongoDB...',
+      message: 'Welcome to /watchlist! Hopefully this will be of use someday with rethinkDB...',
       });
 
   });

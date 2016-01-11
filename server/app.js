@@ -7,7 +7,7 @@ var express = require('express'),
 var config =  require('./config')(app);
 var index =   require('./index')(app);
 var api =     require('./routes/api')(app);
-var user =    require('./routes/user')(app);
+var user =    require('./routes/watchlist')(app);
 
 
 app.listen(port, function () {
