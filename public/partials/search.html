@@ -14,31 +14,69 @@
 
   <br>
 
-  <div class="row">
-    <div ng-repeat='search in details'>
-      <div class="col-md-12">
-        <div class="media">
-          <div class="media-left">
-            <div ng-if="search.Poster == 'N/A'"> <!-- if a poster is not a url -->
-              <a ng-href="#/imdb/{{search.imdbID}}">
-                <img class="media-object img-small thumbnail" src="img/placeholder.png" alt="...">
-              </a>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="/#movies">Movies</a></li>
+    <li><a data-toggle="tab" href="/#series">Series</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="movies" class="tab-pane fade in active">
+      <br>
+      <div ng-repeat='search in movies'>
+        <div class="col-md-12">
+          <div class="media">
+            <div class="media-left">
+              <div ng-if="search.Poster == 'N/A'"> <!-- if a poster is not a url -->
+                <a ng-href="#/imdb/{{search.imdbID}}">
+                  <img class="media-object img-small thumbnail" src="img/placeholder.png" alt="...">
+                </a>
+              </div>
+              <div ng-if="search.Poster != 'N/A'"> <!-- if a poster is a url -->
+                <a ng-href="#/imdb/{{search.imdbID}}">
+                  <img class="media-object img-small thumbnail" ng-src="{{search.Poster}}" src="img/placeholder.png" alt="...">
+                </a>
+              </div>
             </div>
-            <div ng-if="search.Poster != 'N/A'"> <!-- if a poster is a url -->
-              <a ng-href="#/imdb/{{search.imdbID}}">
-                <img class="media-object img-small thumbnail" ng-src="{{search.Poster}}" src="img/placeholder.png" alt="...">
-              </a>
+            <div class="media-body">
+              <h4 class="media-heading">{{search.Title}}</h4>
+              <p>Year: {{search.Year}}</p>
+              <p>Type: {{search.Type}}</p>
+              <a ng-href='#/imdb/{{search.imdbID}}'>Show</a>
             </div>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">{{search.Title}}</h4>
-            <p>Year: {{search.Year}}</p>
-            <p>Type: {{search.Type}}</p>
-            <a ng-href='#/imdb/{{search.imdbID}}'>Show</a>
           </div>
         </div>
       </div>
     </div>
+    <div id="series" class="tab-pane fade">
+      <br>
+      <div ng-repeat='search in series'>
+        <div class="col-md-12">
+          <div class="media">
+            <div class="media-left">
+              <div ng-if="search.Poster == 'N/A'"> <!-- if a poster is not a url -->
+                <a ng-href="#/imdb/{{search.imdbID}}">
+                  <img class="media-object img-small thumbnail" src="img/placeholder.png" alt="...">
+                </a>
+              </div>
+              <div ng-if="search.Poster != 'N/A'"> <!-- if a poster is a url -->
+                <a ng-href="#/imdb/{{search.imdbID}}">
+                  <img class="media-object img-small thumbnail" ng-src="{{search.Poster}}" src="img/placeholder.png" alt="...">
+                </a>
+              </div>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">{{search.Title}}</h4>
+              <p>Year: {{search.Year}}</p>
+              <p>Type: {{search.Type}}</p>
+              <a ng-href='#/imdb/{{search.imdbID}}'>Show</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
     <nav>
     <ul class="pager">
