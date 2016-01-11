@@ -14,4 +14,11 @@ angular
       }), function errorCallback(response) {
         console.log(response);
       }
+
+      $scope.addToWatchlist = function() {
+        console.log('Stuff to add to a Watchlist...');
+        console.log('Title: ' + $scope.details.Title + ' that is a ' + typeof($scope.details.Title));
+        console.log('ID: ' + $scope.details.imdbID + ' that is a ' + typeof($scope.details.imdbID));
+        console.log('Type: ' + $scope.details.Type + ' that is a ' + typeof($scope.details.Type));
+      }
     }])
