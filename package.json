@@ -17,6 +17,7 @@
     "angular": "^1.4.8",
     "angular-ui-router": "^0.2.15",
     "express": "^4.13.3",
-    "request": "^2.67.0"
+    "request": "^2.67.0",
+    "rethinkdb": "^2.2.1"
   }
 }
