@@ -2,6 +2,11 @@ body {
   padding-top: 70px;
 }
 
+
+a:hover {
+  cursor: pointer;
+}
+
 .img-small {
   max-height: 200px;
   max-width: 100px;
