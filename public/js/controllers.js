@@ -32,13 +32,25 @@ angular
 
     // using ng-click to trigger search
     $scope.search = function() {
+      // Get movie result
       $http({
         method: 'GET',
-        url: 'http://localhost:1337/api/search/all/' + $scope.searchterm + '/1'
+        url: 'http://localhost:1337/api/search/type/movie/' + $scope.searchterm + '/1'
       }).then(function successCallback(response) {
         // console.log(typeof(response.data.Search));
         // console.log(response.data.Search);
-        $scope.details = response.data.Search;
+        $scope.movies = response.data.Search;
+      }), function errorCallback(response) {
+        console.log(response);
+      }
+      // Get series result
+      $http({
+        method: 'GET',
+        url: 'http://localhost:1337/api/search/type/series/' + $scope.searchterm + '/1'
+      }).then(function successCallback(response) {
+        // console.log(typeof(response.data.Search));
+        // console.log(response.data.Search);
+        $scope.series = response.data.Search;
       }), function errorCallback(response) {
         console.log(response);
       }
@@ -56,7 +68,7 @@ angular
       }).then(function successCallback(response) {
         // console.log(typeof(response.data.Search));
         // console.log(response.data.Search);
-        $scope.details = response.data.Search;
+        $scope.movies = response.data.Search;
       }), function errorCallback(response) {
         console.log(response);
       }
