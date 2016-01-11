@@ -22,10 +22,16 @@
       <p ng-if="details.Release != 'N/A'"><span class="text-muted">Release Date:</span> {{ details.Released }}</p>
       <p ng-if="details.Rated != 'N/A'"><span class="text-muted">Rated:</span> {{details.Rated}}</p>
       <p ng-if="details.Runtime != 'N/A'"><span class="text-muted">Runtime:</span> {{details.Runtime}}</p>
+      <p ng-if="details.Awards != 'N/A'"><span class="text-muted">Awards:</span> {{details.Awards}}</p>
+
       <p ng-if="details.Genre != 'N/A'"><span class="text-muted">Genre:</span> {{details.Genre}}</p>
       <p ng-if="details.Director != 'N/A'"><span class="text-muted">Director:</span> {{details.Director}}</p>
-      <p ng-if="details.Writer != 'N/A'"><span class="text-muted">Writers:</span> {{details.Writer}}</p>
+      <p ng-if="details.Writer != 'N/A'"><span class="text-muted">Writer(s):</span> {{details.Writer}}</p>
       <p ng-if="details.Actors != 'N/A'"><span class="text-muted">Actors:</span> {{details.Actors}}</p>
+      <p ng-if="details.Production != 'N/A'"><span class="text-muted">Production:</span> {{details.Production}}</p>
+      <p ng-if="details.BoxOffice != 'N/A'"><span class="text-muted">BoxOffice:</span> {{details.BoxOffice}}</p>
+      <p ng-if="details.Country != 'N/A'"><span class="text-muted">Country:</span> {{details.Country}}</p>
+
       <p ng-if="details.Plot != 'N/A'"><span class="text-muted">Plot:</span> {{details.Plot}}</p>
       <a class="btn btn-success btn-sm"  data-toggle="modal" data-target="#ratingsModal">Ratings</a>
       <a class="btn btn-warning btn-sm" target="_blank" ng-href='http://www.imdb.com/title/{{details.imdbID}}'>IMDb</a>
