@@ -3,6 +3,17 @@
     <blockquote>
       <p><i>{{details.tomatoConsensus}}</i></p>
     </blockquote>
+
+    <!-- Poster -->
+    <div class="col-md-4">
+      <div ng-if="details.Poster != 'N/A'">
+        <img ng-src="{{details.Poster}}" alt="{{details.Title}}" class="thumbnail">
+      </div>
+      <div ng-if="details.Poster == 'N/A'">
+        <img src="img/placeholder.png" alt="{{details.Title}}" class="thumbnail img-medium">
+      </div>
+    </div> <!-- end of poster -->
+
     <div class="col-md-8">
 
       <h2>{{details.Title}}</h2>
