@@ -16,10 +16,6 @@
         url: '/about',
         templateUrl: 'partials/about.html'
       })
-      .state('contact', {
-        url: '/contact',
-        templateUrl: 'partials/contact.html'
-      })
       .state('imdbID', {
         url: '/imdb/:imdbID',
         templateUrl: 'partials/imdbObject.html'
