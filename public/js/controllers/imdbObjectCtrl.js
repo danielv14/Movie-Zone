@@ -10,6 +10,7 @@ angular
         url: 'http://localhost:1337/api/imdb/' + imdbID + ''
       }).then(function successCallback(response) {
         $scope.details = response.data;
+        console.log(response.data);
       }), function errorCallback(response) {
         console.log(response);
       }
