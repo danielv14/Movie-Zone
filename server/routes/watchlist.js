@@ -39,7 +39,7 @@ module.exports = function(app) {
 
   // Woring router for inserting into table
   // :title has to be in this format: The+title+of+object with no spaces
-  router.get('/insert/:title/:type/:imdb', function (req, res) {
+  router.post('/insert/:title/:type/:imdb', function (req, res) {
 
     var theTitle = req.params.title;
     var theType = req.params.type;
