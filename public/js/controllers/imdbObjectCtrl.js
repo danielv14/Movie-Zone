@@ -21,9 +21,14 @@ angular
         console.log('Title: ' + $scope.details.Title + ' that is a ' + typeof($scope.details.Title));
         console.log('ID: ' + $scope.details.imdbID + ' that is a ' + typeof($scope.details.imdbID));
         console.log('Type: ' + $scope.details.Type + ' that is a ' + typeof($scope.details.Type));
+        console.log($scope.details.Poster);
+
+        // create saniatry poster url
+        var newPoster = $scope.details.Poster.replace('http://ia.media-imdb.com/images/M/', '');
+        console.log('newPoster\n' + newPoster);
         $http({
           method: 'POST',
-          url: 'http://localhost:1337/watchlist/insert/' + $scope.details.Title + '/' + $scope.details.Type + '/' + $scope.details.imdbID + '/' + $scope.details.Year + ''
+          url: 'http://localhost:1337/watchlist/insert/' + $scope.details.Title + '/' + $scope.details.Type + '/' + $scope.details.imdbID + '/' + $scope.details.Year + '/' + newPoster + ''
 
         })
       }
