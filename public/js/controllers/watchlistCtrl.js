@@ -54,7 +54,7 @@ angular
     $scope.deleteAllSeries = function() {
       console.log('deleting all series');
       $http({
-        method: 'GET',
+        method: 'DELETE',
         url: 'http://localhost:1337/watchlist/clear/series'
       }).then(function successCallback(response) {
         $scope.watchlistSeries = 'empty';
@@ -67,7 +67,7 @@ angular
     $scope.deleteAllMovies = function() {
       console.log('deleting all series');
       $http({
-        method: 'GET',
+        method: 'DELETE',
         url: 'http://localhost:1337/watchlist/clear/movie'
       }).then(function successCallback(response) {
         $scope.watchlistMovie = 'empty';

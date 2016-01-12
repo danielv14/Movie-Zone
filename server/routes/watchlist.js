@@ -96,7 +96,7 @@ module.exports = function(app) {
   }) // end of route
 
   // clear all movies
-  router.get('/clear/movie', function (req, res) {
+  router.delete('/clear/movie', function (req, res) {
     r.db('moviezone').table('watchlist').filter(r.row('type').eq("movie")).delete().run(connection, function(err, result) {
       if (err) throw err;
       res.send(result);
@@ -104,7 +104,7 @@ module.exports = function(app) {
   })
 
   // clear all series
-  router.get('/clear/series', function (req, res) {
+  router.delete('/clear/series', function (req, res) {
     r.db('moviezone').table('watchlist').filter(r.row('type').eq("series")).delete().run(connection, function(err, result) {
       if (err) throw err;
       res.send(result);
@@ -112,7 +112,7 @@ module.exports = function(app) {
   })
 
   // clear a object
-  router.get('/clear/:id', function (req, res) {
+  router.delete('/clear/:id', function (req, res) {
 
     var targetID = req.params.id;
 
