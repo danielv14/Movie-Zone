@@ -1,7 +1,8 @@
 var express = require('express'),
     app = express(),
     request = require('request'),
-    r = require('rethinkdb');
+    r = require('rethinkdb'),
+    connection = null;
 
 
 module.exports = function(app) {
