@@ -61,7 +61,8 @@ module.exports = function(app) {
       if (err) throw err;
       console.log(JSON.stringify(result, null, 2));
     })
-  })
+
+  }) // end of route
 
   // clear the watchlist
   router.get('/clear', function (req, res) {
@@ -69,7 +70,7 @@ module.exports = function(app) {
       if (err) throw err;
       console.log(JSON.stringify(result, null, 2))
     })
-  })
+  }) // end of route
 
   // clear a object
   router.get('/clear/:id', function (req, res) {
@@ -80,7 +81,9 @@ module.exports = function(app) {
       if (err) throw err;
       console.log(JSON.stringify(result, null, 2))
     })
-  })
+  }) // end of route
+
+
 
   // get just the movies
   router.get('/find/movie', function (req, res) {
@@ -102,12 +105,10 @@ module.exports = function(app) {
         console.log(JSON.stringify(result, null, 2));
         res.send(result);
 
-
       });
     });
 
-
-  })
+  }) // end of route
 
 
 
