@@ -38,12 +38,18 @@ module.exports = function(app) {
   });
 
   // Woring router for inserting into table
-  // spaces in title are a problem as of now
-  router.post('/insert/:title/:type/:imdb', function (req, res) {
+  // :title has to be in this format: The+title+of+object with no spaces
+  router.get('/insert/:title/:type/:imdb', function (req, res) {
+
     var theTitle = req.params.title;
     var theType = req.params.type;
     var imdbID = req.params.imdb;
+    // Sanitate the incomming title
+    theTitle = theTitle.replace(/\+/g, " "); // replace + with space
+    theTitle = theTitle.replace(/:/g, "asdasd"); // temporary replace : with asdasd
+    theTitle = theTitle.replace(/asdasd/g, ":"); // replace asdasd with : again. Doing this because : is treaded as a param in express/node
     console.log(theTitle);
+
     r.db('moviezone').table('watchlist').insert([
       {title: theTitle,
       type: theType,
