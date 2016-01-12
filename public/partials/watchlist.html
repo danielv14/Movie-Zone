@@ -1,19 +1,52 @@
 <br>
 <div ng-controller="watchlistCtrl">
-  <h2>Your watchlist</h2>
+  <h1>Your watchlist</h1>
+  <br>
 
-  <div ng-if="watchlist != 'empty'">
-    <div ng-repeat="object in watchlist">
-      <p>Title: {{object.title}}</p>
-      <p>Type: {{object.type}}</p>
-      <a class="btn btn-default btn-sm" ng-href="#imdb/{{object.imdb}}">Show</a>
-      <a href="btn btn-danger btn-sm" ng-click="deleteObject()"></a>
+
+  <div class="row">
+    <!-- Movies -->
+    <div class="col-md-6">
+      <h2>Movies</h2>
+      <!-- if movies are found -->
+      <div ng-if="watchlistMovie != 'empty'">
+        <div ng-repeat="object in watchlistMovie">
+          <p>Title: {{object.title}}</p>
+          <p>Type: {{object.type}}</p>
+          <a class="btn btn-default btn-sm" ng-href="#imdb/{{object.imdb}}">Show</a>
+          <a href="btn btn-danger btn-sm" ng-click="deleteObject()"></a>
+        </div>
+      </div>
+      <!-- if movies are not found -->
+      <div ng-if="watchlistMovie == 'empty'">
+        <p>No movies in the watchlist</p>
+      </div>
     </div>
+
+    <!-- Series -->
+    <div class="col-md-6">
+      <h2>Series</h2>
+      <!-- if series are found -->
+      <div ng-if="watchlistSeries != 'empty'">
+        <div ng-repeat="object in watchlistSeries">
+          <p>Title: {{object.title}}</p>
+          <p>Type: {{object.type}}</p>
+          <a class="btn btn-default btn-sm" ng-href="#imdb/{{object.imdb}}">Show</a>
+          <a href="btn btn-danger btn-sm" ng-click="deleteObject()"></a>
+        </div>
+      </div>
+      <!-- if series are not found -->
+      <div ng-if="watchlistSeries == 'empty'">
+        <p>No series in the watchlist</p>
+      </div>
+    </div>
+    </div>
+
   </div>
 
-  <div ng-if="watchlist == 'empty'">
-    <p>Nothing in watchlist</p>
-  </div>
+
+
+
 
   <br>
   <a class="btn btn-warning btn-sm" ng-click="deleteAll()">Clear watchlist</a>
