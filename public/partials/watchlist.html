@@ -55,9 +55,11 @@
       <div ng-if="watchlistSeries == 'empty'">
         <p>No series in the watchlist</p>
       </div>
+      <br>
+      <a ng-if="watchlistSeries != 'empty'" class="btn btn-danger btn-sm" ng-click="deleteAllSeries()">Clear series</a>
 
+    </div>
+  </div> <!-- end of row -->
 
   <br>
-  <a class="btn btn-warning btn-sm" ng-click="deleteAll()">Clear watchlist</a>
-
-</div>
+</div> <!-- end of controller -->
