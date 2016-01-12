@@ -1,3 +1,5 @@
+
+
 angular
   .module('app')
 
@@ -5,6 +7,10 @@ angular
     .controller('imdbObjectCtrl', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams) {
       // Create variable from param
       var imdbID = $stateParams.imdbID;
+
+      // create poster variable to manipulate
+      var newPoster = '';
+
       $http({
         method: 'GET',
         url: 'http://localhost:1337/api/imdb/' + imdbID + ''
@@ -38,8 +44,6 @@ angular
         console.log('Type: ' + $scope.details.Type + ' that is a ' + typeof($scope.details.Type));
         console.log($scope.details.Poster);
 
-        // create poster variable to manipulate
-        var newPoster = '';
         // create saniatry poster url
         if ($scope.details.Poster != 'N/A') {
           newPoster = $scope.details.Poster.replace('http://ia.media-imdb.com/images/M/', '');
