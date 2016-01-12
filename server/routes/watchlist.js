@@ -60,6 +60,14 @@ module.exports = function(app) {
     })
   })
 
+  // clear the watchlist
+  router.get('/clear', function (req, res) {
+    r.db('moviezone').table('watchlist').delete().run(connection, function(err, result) {
+      if (err) throw err;
+      console.log(JSON.stringify(result, null, 2))
+    })
+  })
+
 
 
 
