@@ -68,6 +68,16 @@ module.exports = function(app) {
     })
   })
 
+  // clear a object
+  router.get('/clear/:id', function (req, res) {
+
+    var targetID = req.params.id;
+
+    r.db('moviezone').table('watchlist').get(targetID).delete().run(connection, function(err, result) {
+      if (err) throw err;
+      console.log(JSON.stringify(result, null, 2))
+    })
+  })
 
 
 
