@@ -82,6 +82,23 @@ module.exports = function(app) {
     })
   })
 
+  // get all objects
+  router.get('/find/all', function (req, res) {
+
+    r.db('moviezone').table('watchlist').run(connection, function(err, cursor) {
+      if (err) throw err;
+      cursor.toArray(function(err, result) {
+        if (err) throw err;
+        console.log(JSON.stringify(result, null, 2));
+        res.send(result);
+
+
+      });
+    });
+
+
+  })
+
 
 
 }
