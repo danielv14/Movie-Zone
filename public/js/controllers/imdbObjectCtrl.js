@@ -23,7 +23,7 @@ angular
         console.log('Type: ' + $scope.details.Type + ' that is a ' + typeof($scope.details.Type));
         $http({
           method: 'POST',
-          url: 'http://localhost:1337/watchlist/insert/' + $scope.details.Title + '/' + $scope.details.Type + '/' + $scope.details.imdbID + ''
+          url: 'http://localhost:1337/watchlist/insert/' + $scope.details.Title + '/' + $scope.details.Type + '/' + $scope.details.imdbID + '/' + $scope.details.Year + ''
 
         })
       }

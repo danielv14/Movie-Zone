@@ -39,11 +39,12 @@ module.exports = function(app) {
 
   // Woring router for inserting into table
   // :title has to be in this format: The+title+of+object with no spaces
-  router.post('/insert/:title/:type/:imdb/', function (req, res) {
+  router.post('/insert/:title/:type/:imdb/:year', function (req, res) {
 
     var theTitle = req.params.title;
     var theType = req.params.type;
     var imdbID = req.params.imdb;
+    var theYear = req.params.year;
     // var thePoster = req.params.poster;
 
     // Sanitate the incomming title
@@ -69,7 +70,8 @@ module.exports = function(app) {
     r.db('moviezone').table('watchlist').insert([
       {title: theTitle,
       type: theType,
-      imdb: imdbID}
+      imdb: imdbID,
+      year: theYear}
     ]).run(connection, function(err, result) {
       if (err) throw err;
       console.log(JSON.stringify(result, null, 2));

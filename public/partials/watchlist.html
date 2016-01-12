@@ -8,6 +8,7 @@
     <!-- Movies -->
     <div class="col-md-6">
       <h2>Movies</h2>
+      <br>
       <!-- if movies are found -->
       <div ng-if="watchlistMovie != 'empty'">
         <div ng-repeat="object in watchlistMovie">
@@ -26,6 +27,7 @@
             </div>
             <div class="media-body">
               <h4 class="media-heading">{{object.title}}</h4>
+              <p>{{object.year}}</p>
               <a ng-href='#/imdb/{{object.imdb}}'>Info</a>
             </div>
           </div>
@@ -43,6 +45,7 @@
     <!-- Series -->
     <div class="col-md-6">
       <h2>Series</h2>
+      <br>
       <!-- if series are found -->
       <div ng-if="watchlistSeries != 'empty'">
         <div ng-repeat="object in watchlistSeries">
