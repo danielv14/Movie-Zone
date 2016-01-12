@@ -5,6 +5,23 @@ angular
 
   .controller('watchlistCtrl', ['$scope', '$http', function($scope, $http) {
     console.log('controller working');
+
+    // fetch movies
+    $http({
+      method: 'GET',
+      url: 'http://localhost:1337/watchlist/find/movie'
+    }).then(function successCallback(response) {
+      // console.log(response.data);
+      if (response.data.length === 0) {
+        $scope.watchlistMovie = 'empty';
+      } else {
+        $scope.watchlistMovie = response.data;
+
+      }
+      console.log(response.data);
+    }), function errorCallback(response) {
+      // console.log(response.data);
+    }
     $http({
       method: 'GET',
       url: 'http://localhost:1337/watchlist/find/all'
