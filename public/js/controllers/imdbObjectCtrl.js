@@ -55,9 +55,9 @@ angular
         console.log(newPoster);
 
         $http({
-          method: 'GET',
-          url: 'http://localhost:1337/watchlist/insert/' + $scope.details.Title + '/' + $scope.details.Type + '/' + $scope.details.imdbID + '/' + $scope.details.Year + '/' + newPoster + ''
-        }).then(function successCallback(response) {
+          method: 'PUT',
+          url: 'http://localhost:1337/watchlist/insert/' + $scope.details.Title + '/' + $scope.details.Type + '/' + $scope.details.imdbID + '/' + $scope.details.Year + '/' + newPoster + '/'
+        }).success(function successCallback(response) {
           console.log(response);
           console.log('hello from after http');
         }), function errorCallback(response) {

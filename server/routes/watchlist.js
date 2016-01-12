@@ -39,7 +39,7 @@ module.exports = function(app) {
 
   // Woring router for inserting into table
   // :title has to be in this format: The+title+of+object with no spaces
-  router.get('/insert/:title/:type/:imdb/:year/:poster', function (req, res) {
+  router.put('/insert/:title/:type/:imdb/:year/:poster', function (req, res) {
 
     var theTitle = req.params.title;
     var theType = req.params.type;
@@ -78,7 +78,9 @@ module.exports = function(app) {
       console.log(JSON.stringify(result, null, 2));
     })
 
-  }) // end of route
+
+  })
+  // end of route
 
   // clear the watchlist
   router.get('/clear', function (req, res) {
