@@ -37,6 +37,24 @@ module.exports = function(app) {
 
   });
 
+  // Woring router for inserting into table
+  // spaces in title are a problem as of now
+  router.post('/insert/:title/:type/:imdb', function (req, res) {
+    var theTitle = req.params.title;
+    var theType = req.params.type;
+    var imdbID = req.params.imdb;
+    console.log(theTitle);
+    r.db('moviezone').table('watchlist').insert([
+      {title: theTitle,
+      type: theType,
+      imdb: imdbID}
+    ]).run(connection, function(err, result) {
+      if (err) throw err;
+      console.log(JSON.stringify(result, null, 2));
+    })
+  })
+
+
 
 
 }
