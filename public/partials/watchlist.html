@@ -2,10 +2,20 @@
 <div ng-controller="watchlistCtrl">
   <h2>Your watchlist</h2>
 
-  <div ng-repeat="object in watchlist ">
-    <p>Title: {{object.title}}</p>
-    <p>Type: {{object.type}}</p>
-    <a class="btn btn-default btn-sm" ng-href="#imdb/{{object.imdb}}">Show</a>
+  <div ng-if="watchlist != 'empty'">
+    <div ng-repeat="object in watchlist">
+      <p>Title: {{object.title}}</p>
+      <p>Type: {{object.type}}</p>
+      <a class="btn btn-default btn-sm" ng-href="#imdb/{{object.imdb}}">Show</a>
+      <a href="btn btn-danger btn-sm" ng-click="deleteObject()"></a>
+    </div>
   </div>
+
+  <div ng-if="watchlist == 'empty'">
+    <p>Nothing in watchlist</p>
+  </div>
+
+  <br>
+  <a class="btn btn-warning btn-sm" ng-click="deleteAll()">Clear watchlist</a>
 
 </div>

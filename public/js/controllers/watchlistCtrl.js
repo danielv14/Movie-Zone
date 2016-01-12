@@ -9,9 +9,30 @@ angular
       method: 'GET',
       url: 'http://localhost:1337/watchlist/find/all'
     }).then(function successCallback(response) {
+      // console.log(response.data);
+      if (response.data.length === 0) {
+        $scope.watchlist = 'empty';
+      } else {
+        $scope.watchlist = response.data;
+
+      }
       console.log(response.data);
-      $scope.watchlist = response.data;
     }), function errorCallback(response) {
-      console.log(response.data);
+      // console.log(response.data);
     }
+    }
+
+    $scope.deleteAll = function() {
+      console.log('deleting all entries');
+      $http({
+        method: 'GET',
+        url: 'http://localhost:1337/watchlist/clear'
+      }).then(function successCallback(response) {
+        console.log(response.data);
+        $scope.watchlist =  'empty';
+      }), function errorCallback(respone) {
+        console.log(response);
+      }
+    }
+
   }])
