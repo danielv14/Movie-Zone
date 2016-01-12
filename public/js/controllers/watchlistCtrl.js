@@ -22,15 +22,17 @@ angular
     }), function errorCallback(response) {
       // console.log(response.data);
     }
+
+    // fetch series
     $http({
       method: 'GET',
-      url: 'http://localhost:1337/watchlist/find/all'
+      url: 'http://localhost:1337/watchlist/find/series'
     }).then(function successCallback(response) {
       // console.log(response.data);
       if (response.data.length === 0) {
-        $scope.watchlist = 'empty';
+        $scope.watchlistSeries = 'empty';
       } else {
-        $scope.watchlist = response.data;
+        $scope.watchlistSeries = response.data;
 
       }
       console.log(response.data);
