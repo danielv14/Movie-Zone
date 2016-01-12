@@ -82,6 +82,16 @@ module.exports = function(app) {
     })
   })
 
+  // get just the movies
+  router.get('/find/movie', function (req, res) {
+
+  })
+
+  // get just the series
+  router.get('/find/series', function (req, res) {
+
+  })
+
   // get all objects
   router.get('/find/all', function (req, res) {
 
