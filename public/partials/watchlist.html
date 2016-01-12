@@ -11,16 +11,33 @@
       <!-- if movies are found -->
       <div ng-if="watchlistMovie != 'empty'">
         <div ng-repeat="object in watchlistMovie">
-          <p>Title: {{object.title}}</p>
-          <p>Type: {{object.type}}</p>
-          <a class="btn btn-default btn-sm" ng-href="#imdb/{{object.imdb}}">Show</a>
-          <a href="btn btn-danger btn-sm" ng-click="deleteObject()"></a>
+          <div class="media">
+            <div class="media-left">
+              <div ng-if="object.Poster == 'N/A'"> <!-- if a poster is not a url -->
+                <a ng-href="#/imdb/{{object.imdb}}">
+                  <img class="media-object img-small thumbnail" src="img/placeholder.png" alt="...">
+                </a>
+              </div>
+              <div ng-if="object.Poster != 'N/A'"> <!-- if a poster is a url -->
+                <a ng-href='#/imdb/{{object.imdb}}'>
+                  <img class="media-object img-small thumbnail" ng-src="{{object.Poster}}" src="img/placeholder.png" alt="...">
+                </a>
+              </div>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">{{object.title}}</h4>
+              <a ng-href='#/imdb/{{object.imdb}}'>Info</a>
+            </div>
+          </div>
         </div>
       </div>
       <!-- if movies are not found -->
       <div ng-if="watchlistMovie == 'empty'">
         <p>No movies in the watchlist</p>
       </div>
+      <br>
+      <a ng-if="watchlistMovie != 'empty'" class="btn btn-danger btn-sm" ng-click="deleteAllMovies()">Clear movies</a>
+
     </div>
 
     <!-- Series -->
