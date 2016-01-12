@@ -20,5 +20,10 @@ angular
         console.log('Title: ' + $scope.details.Title + ' that is a ' + typeof($scope.details.Title));
         console.log('ID: ' + $scope.details.imdbID + ' that is a ' + typeof($scope.details.imdbID));
         console.log('Type: ' + $scope.details.Type + ' that is a ' + typeof($scope.details.Type));
+        $http({
+          method: 'POST',
+          url: 'http://localhost:1337/watchlist/insert/' + $scope.details.Title + '/' + $scope.details.Type + '/' + $scope.details.imdbID + ''
+
+        })
       }
     }])
