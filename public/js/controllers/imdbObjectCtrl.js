@@ -15,6 +15,21 @@ angular
         console.log(response);
       }
 
+      // http request to see if object is in database
+      $http({
+        method: 'GET',
+        url: 'http://localhost:1337/watchlist/imdb/' + imdbID + ''
+      }).then(function successCallback(response) {
+        console.log(response.data);
+        if (response.data.length === 0) {
+          $scope.isInWatchlist = 'no';
+        } else {
+          $scope.isInWatchlist = 'yes';
+        }
+      }), function errorCallback(resonse) {
+        console.log(response)
+      }
+
       // add scope to watchlist
       $scope.addToWatchlist = function() {
         console.log('Stuff to add to a Watchlist...');
