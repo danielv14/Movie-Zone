@@ -104,7 +104,19 @@ module.exports = function(app) {
   // get just the series
   router.get('/find/series', function (req, res) {
 
-  })
+    r.db('moviezone').table('watchlist').filter(r.row('type').eq("series")).run(connection, function(err, cursor) {
+      if (err) throw err;
+      cursor.toArray(function(err, result) {
+        if (err) throw err;
+        console.log(JSON.stringify(result, null, 2));
+        res.send(result);
+
+      });
+    });
+
+  }) // end of route
+
+
 
   // get all objects
   router.get('/find/all', function (req, res) {
