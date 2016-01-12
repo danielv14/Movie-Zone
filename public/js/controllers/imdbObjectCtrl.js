@@ -15,6 +15,7 @@ angular
         console.log(response);
       }
 
+      // add scope to watchlist
       $scope.addToWatchlist = function() {
         console.log('Stuff to add to a Watchlist...');
         console.log('Title: ' + $scope.details.Title + ' that is a ' + typeof($scope.details.Title));
