@@ -44,12 +44,15 @@ module.exports = function(app) {
     var theTitle = req.params.title;
     var theType = req.params.type;
     var imdbID = req.params.imdb;
+
     // Sanitate the incomming title
     theTitle = theTitle.replace(/\+/g, " "); // replace + with space
     theTitle = theTitle.replace(/:/g, "asdasd"); // temporary replace : with asdasd
     theTitle = theTitle.replace(/asdasd/g, ":"); // replace asdasd with : again. Doing this because : is treaded as a param in express/node
+
     console.log(theTitle);
 
+    // insert into table
     r.db('moviezone').table('watchlist').insert([
       {title: theTitle,
       type: theType,
