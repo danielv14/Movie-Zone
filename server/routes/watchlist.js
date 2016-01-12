@@ -4,6 +4,11 @@ var express = require('express'),
     r = require('rethinkdb'),
     connection = null;
 
+r.connect({host: 'localhost', port: 28015}, function(err, conn) {
+  if (err) throw err;
+  connection = conn;
+})
+
 
 module.exports = function(app) {
 
@@ -13,10 +18,7 @@ module.exports = function(app) {
   // delcare prefix url for api
   app.use('/watchlist', router);
 
-  r.connect({host: 'localhost', port: 28015}, function(err, conn) {
-    if (err) throw err;
-    connection = conn;
-  })
+
 
 
   // Routes
@@ -76,6 +78,7 @@ module.exports = function(app) {
     ]).run(connection, function(err, result) {
       if (err) throw err;
       console.log(JSON.stringify(result, null, 2));
+
     })
 
 
@@ -179,6 +182,8 @@ module.exports = function(app) {
       })
     })
   })
+
+
 
 
 }
