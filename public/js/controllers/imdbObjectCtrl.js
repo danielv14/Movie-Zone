@@ -1,5 +1,4 @@
 
-
 angular
   .module('app')
 
@@ -39,6 +38,7 @@ angular
       // add scope to watchlist
       $scope.addToWatchlist = function() {
         console.log('hello');
+        console.log($scope.details);
         // console.log('Stuff to add to a Watchlist...');
         // console.log('Title: ' + $scope.details.Title + ' that is a ' + typeof($scope.details.Title));
         // console.log('ID: ' + $scope.details.imdbID + ' that is a ' + typeof($scope.details.imdbID));
@@ -48,7 +48,6 @@ angular
         // create saniatry poster url
         if ($scope.details.Poster != 'N/A') {
           newPoster = $scope.details.Poster.replace('http://ia.media-imdb.com/images/M/', '');
-          // console.log('newPoster\n' + newPoster);
         } else {
           newPoster = 'no';
         }
