@@ -69,6 +69,7 @@ module.exports = function(app) {
     r.db('moviezone').table('watchlist').delete().run(connection, function(err, result) {
       if (err) throw err;
       console.log(JSON.stringify(result, null, 2))
+      res.send(result);
     })
   }) // end of route
 
