@@ -73,6 +73,22 @@ module.exports = function(app) {
     })
   }) // end of route
 
+  // clear all movies
+  router.get('/clear/movie', function (req, res) {
+    r.db('moviezone').table('watchlist').filter(r.row('type').eq("movie")).delete().run(connection, function(err, result) {
+      if (err) throw err;
+      res.send(result);
+    })
+  })
+
+  // clear all series
+  router.get('/clear/series', function (req, res) {
+    r.db('moviezone').table('watchlist').filter(r.row('type').eq("series")).delete().run(connection, function(err, result) {
+      if (err) throw err;
+      res.send(result);
+    })
+  })
+
   // clear a object
   router.get('/clear/:id', function (req, res) {
 
