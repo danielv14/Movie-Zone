@@ -13,6 +13,11 @@ module.exports = function(app) {
   // delcare prefix url for api
   app.use('/watchlist', router);
 
+  r.connect({host: 'localhost', port: 28015}, function(err, conn) {
+    if (err) throw err;
+    connection = conn;
+  })
+
 
   // Routes
   router.get('/', function (req, res) {
