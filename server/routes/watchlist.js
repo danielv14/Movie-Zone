@@ -23,7 +23,16 @@ module.exports = function(app) {
   router.get('/', function (req, res) {
 
    res.json({
-      message: 'Welcome to /watchlist! Hopefully this will be of use someday with rethinkDB...',
+      message: 'Welcome to /watchlist!',
+      usage: {
+        '/insert/:title/:type/:imdb':     'insert into db',
+        '/clear':                         'clear the db',
+        'clear/:id':                      'clear by ID created by rethinkdb',
+        '/find/all':                      'find all content in db',
+        '/find/movie':                    'find only movies',
+        '/find/series':                   'find only series'
+
+      }
       });
 
   });
