@@ -39,22 +39,7 @@ angular
     }), function errorCallback(response) {
       // console.log(response.data);
     }
-    }
 
-    // Delete all
-    $scope.deleteAll = function() {
-      console.log('deleting all entries');
-      $http({
-        method: 'GET',
-        url: 'http://localhost:1337/watchlist/clear'
-      }).then(function successCallback(response) {
-        console.log(response.data);
-        // set the scopes to empty
-        $scope.watchlistMovie =  'empty';
-        $scope.watchlistSeries = 'empty';
-      }), function errorCallback(respone) {
-        console.log(response);
-      }
     }
 
     $scope.deleteAllSeries = function() {
