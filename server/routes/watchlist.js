@@ -57,7 +57,7 @@ module.exports = function(app) {
     thePoster = thePoster.replace(/:/g, "asdasd"); // temporary replace : with asdasd
     thePoster = thePoster.replace(/\//g, "slash"); // temporary replace / with slash
     thePoster = thePoster.replace(/\_/g, "underscore"); // replace _ with underscore
-    
+
     // put it back together
     thePoster = thePoster.replace(/slash/g, "/"); //  replace slash with / again
     thePoster = thePoster.replace(/underscore/g, "_"); //  replace slash with / again
@@ -166,6 +166,17 @@ module.exports = function(app) {
 
   }) // end of route
 
+  // fetch object from db matching imdb id
+  router.get('/imdb/:id', function(req, res) {
+    r.db('moviezone').table('watchlist').filter(r.row('imdb').eq(req.params.id)).run(connection, function(err, cursor) {
+      if (err) throw err;
+      cursor.toArray(function(err, result) {
+        if (err) throw err;
+        console.log(JSON.stringify(result, null, 2));
+        res.send(result);
+      })
+    })
+  })
 
 
 }
