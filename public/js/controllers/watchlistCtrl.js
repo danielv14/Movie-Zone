@@ -40,8 +40,17 @@ angular
       // console.log(response.data);
     }
 
+
+    // delete object
+    $scope.deleteObject = function() {
+      console.log('delete object');
+      // $http({
+      //   method: 'DELETE',
+      //   url: 'http://localhost:1337/watchlist/clear/' + $scope. + ''
+      // })
     }
 
+    // delete all series
     $scope.deleteAllSeries = function() {
       console.log('deleting all series');
       $http({
@@ -54,6 +63,7 @@ angular
       }
     }
 
+    // delete all movies
     $scope.deleteAllMovies = function() {
       console.log('deleting all series');
       $http({
