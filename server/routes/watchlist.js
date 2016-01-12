@@ -39,18 +39,31 @@ module.exports = function(app) {
 
   // Woring router for inserting into table
   // :title has to be in this format: The+title+of+object with no spaces
-  router.post('/insert/:title/:type/:imdb', function (req, res) {
+  router.post('/insert/:title/:type/:imdb/', function (req, res) {
 
     var theTitle = req.params.title;
     var theType = req.params.type;
     var imdbID = req.params.imdb;
+    // var thePoster = req.params.poster;
 
     // Sanitate the incomming title
     theTitle = theTitle.replace(/\+/g, " "); // replace + with space
     theTitle = theTitle.replace(/:/g, "asdasd"); // temporary replace : with asdasd
     theTitle = theTitle.replace(/asdasd/g, ":"); // replace asdasd with : again. Doing this because : is treaded as a param in express/node
 
+    // // Sanitate the incomming poster
+    // thePoster = thePoster.replace(/\+/g, " "); // replace + with space
+    // thePoster = thePoster.replace(/:/g, "asdasd"); // temporary replace : with asdasd
+    // thePoster = thePoster.replace(/\//g, "slash"); // temporary replace / with slash
+    // thePoster = thePoster.replace(/\_/g, "underscore"); // replace _ with underscore
+    //
+    // // put it back together
+    // thePoster = thePoster.replace(/slash/g, "/"); //  replace slash with / again
+    // thePoster = thePoster.replace(/underscore/g, "_"); //  replace slash with / again
+    // thePoster = thePoster.replace(/asdasd/g, ":"); // replace asdasd with : again. Doing this because : is treaded as a param in express/node
+
     console.log(theTitle);
+    // console.log(thePoster);
 
     // insert into table
     r.db('moviezone').table('watchlist').insert([
