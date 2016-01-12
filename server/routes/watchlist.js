@@ -37,15 +37,6 @@ module.exports = function(app) {
 
   });
 
-  router.get('/test', function (req, res) {
-
-    r.db('moviezone').tableCreate('authors').run(connection, function(err, result) {
-      if (err) throw err;
-      console.log(JSON.stringify(result, null, 2));
-    })
-
-  });
-
   // Woring router for inserting into table
   // :title has to be in this format: The+title+of+object with no spaces
   router.get('/insert/:title/:type/:imdb', function (req, res) {
