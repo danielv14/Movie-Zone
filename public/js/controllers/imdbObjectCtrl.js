@@ -23,9 +23,16 @@ angular
         console.log('Type: ' + $scope.details.Type + ' that is a ' + typeof($scope.details.Type));
         console.log($scope.details.Poster);
 
+        // create poster variable to manipulate
+        var newPoster = '';
         // create saniatry poster url
-        var newPoster = $scope.details.Poster.replace('http://ia.media-imdb.com/images/M/', '');
-        console.log('newPoster\n' + newPoster);
+        if ($scope.details.Poster != 'N/A') {
+          newPoster = $scope.details.Poster.replace('http://ia.media-imdb.com/images/M/', '');
+          console.log('newPoster\n' + newPoster);
+        } else {
+          newPoster = 'no';
+        }
+
         $http({
           method: 'POST',
           url: 'http://localhost:1337/watchlist/insert/' + $scope.details.Title + '/' + $scope.details.Type + '/' + $scope.details.imdbID + '/' + $scope.details.Year + '/' + newPoster + ''
