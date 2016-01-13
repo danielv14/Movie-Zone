@@ -4,7 +4,7 @@
   .module('app', [
     'ui.router'
   ])
-  .config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
+  .config(['$urlRouterProvider', '$stateProvider', '$locationProvider', function($urlRouterProvider, $stateProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
@@ -28,5 +28,8 @@
         url: '/watchlist',
         templateUrl: 'partials/watchlist.html'
       })
+
+      // set locationProvider
+      $locationProvider.html5Mode(true);
 
   }]);
