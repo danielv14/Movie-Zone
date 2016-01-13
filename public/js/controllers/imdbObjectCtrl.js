@@ -37,28 +37,20 @@ angular
 
       // add scope to watchlist
       $scope.addToWatchlist = function() {
-        console.log('hello');
-        console.log($scope.details);
-        // console.log('Stuff to add to a Watchlist...');
-        // console.log('Title: ' + $scope.details.Title + ' that is a ' + typeof($scope.details.Title));
-        // console.log('ID: ' + $scope.details.imdbID + ' that is a ' + typeof($scope.details.imdbID));
-        // console.log('Type: ' + $scope.details.Type + ' that is a ' + typeof($scope.details.Type));
-        // console.log($scope.details.Poster);
 
-        // create saniatry poster url
+        // saniatate poster url
         if ($scope.details.Poster != 'N/A') {
           newPoster = $scope.details.Poster.replace('http://ia.media-imdb.com/images/M/', '');
         } else {
           newPoster = 'no';
         }
-        console.log(newPoster);
 
+        // http request to put object into db
         $http({
           method: 'PUT',
           url: 'http://localhost:1337/watchlist/insert/' + $scope.details.Title + '/' + $scope.details.Type + '/' + $scope.details.imdbID + '/' + $scope.details.Year + '/' + newPoster + '/'
         }).success(function successCallback(response) {
           console.log(response);
-          console.log('hello from after http');
         }), function errorCallback(response) {
           console.log(response);
         }
@@ -73,6 +65,7 @@ angular
         }), function errorCallback(response) {
           console.log(response);
         }
+
         // Call watchlist again to force watchlist button to be removed.
         $http({
           method: 'GET',
