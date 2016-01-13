@@ -17,7 +17,7 @@
 
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <h2>Movies</h2>
       <div class="animated bounceInLeft" ng-repeat='search in movies'>
         <div class="media">
@@ -43,7 +43,7 @@
     </div>
 
 
-    <div class="col-md-6 ">
+    <div class="col-md-4">
       <h2>Series</h2>
       <div class="animated bounceInRight" ng-repeat='search in series'>
         <div class="media">
@@ -68,18 +68,21 @@
       </div>
     </div>
 
+    <!-- pagination with new GET-requests -->
+    <div class="col-md-4">
+      <nav>
+        <ul class="pagination">
+          <li><a ng-click="pageOne()">1</a></li>
+          <li><a ng-click="pageTwo()">2</a></li>
+          <li><a ng-click="pageThree()">3</a></li>
+          <li><a ng-click="pageFour()">4</a></li>
+          <li><a ng-click="pageFive()">5</a></li>
+        </ul>
+      </nav>
+    </div>
+
   </div> <!-- end of row -->
 
   <br>
-  <!-- pagination with new GET-requests -->
-  <nav>
-    <ul class="pagination">
-      <li><a ng-click="pageOne()">1</a></li>
-      <li><a ng-click="pageTwo()">2</a></li>
-      <li><a ng-click="pageThree()">3</a></li>
-      <li><a ng-click="pageFour()">4</a></li>
-      <li><a ng-click="pageFive()">5</a></li>
-    </ul>
-  </nav>
 
 </div>
