@@ -16,3 +16,7 @@ a:hover {
   width: 300px;
   min-height: 400px;
 }
+
+.margin-left {
+  margin-left: 20px;
+}

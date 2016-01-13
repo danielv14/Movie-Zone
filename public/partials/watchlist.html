@@ -7,7 +7,7 @@
   <div class="row">
     <!-- Movies -->
     <div class="col-md-6">
-      <h2>Movies</h2>
+      <h2>Movies<a ng-if="watchlistMovie != 'empty'" class="btn btn-danger btn-xs margin-left" ng-click="deleteAllMovies()">Clear movies</a></h2>
       <br>
       <!-- if movies are found -->
       <div ng-if="watchlistMovie != 'empty'">
@@ -44,7 +44,7 @@
 
     <!-- Series -->
     <div class="col-md-6">
-      <h2>Series</h2>
+      <h2>Series<a ng-if="watchlistSeries != 'empty'" class="btn btn-danger btn-xs margin-left" ng-click="deleteAllSeries()">Clear series</a></h2>
       <br>
       <!-- if series are found -->
       <div ng-if="watchlistSeries != 'empty'">
@@ -65,7 +65,8 @@
             <div class="media-body">
               <h4 class="media-heading">{{object.title}}</h4>
               <p>{{object.year}}</p>
-              <a ng-href='#/imdb/{{object.imdb}}'>Info</a>
+              <p><a ng-href='#/imdb/{{object.imdb}}'>Info</a></p>
+              <p><a ng-click="deleteObject()">Remove</a></p>
             </div>
           </div>
         </div>
@@ -75,8 +76,6 @@
         <p>No series in the watchlist</p>
       </div>
       <br>
-      <a ng-if="watchlistSeries != 'empty'" class="btn btn-danger btn-sm" ng-click="deleteAllSeries()">Clear series</a>
-
     </div>
   </div> <!-- end of row -->
 
