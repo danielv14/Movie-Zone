@@ -18,4 +18,6 @@ Den databas som används för appen är "moviezone" och tabellen heter "watchlis
 ## Angular app
 I mappen `public/` finns själva Angular appen som serveras som statiska filer med hjälp av express servern på `localhost:133/`. Appen är av single-page-application stuk och använder routing och controllers samt html partials.    
 `public/js/app.js` är själva kärnan i applikationen och använder angular-ui-router som node_module för att sköta routingen. Controllers definieras inte i `public/js/app.js` utan definieras istället med `ng-controller="Ctrl"` direkt i html-filerna.    
-Html partials finns i `public/partials/` och controllers finns i `public/js/controllers/` där diverse olika controllers sköter olika funktioner av applikationen.
+Html partials finns i `public/partials/` och controllers finns i `public/js/controllers/` där diverse olika controllers sköter olika funktioner av applikationen.   
+
+Appen använder http request i sina controllers för att prata med express servern på på antingen `/api` eller `/watchlist` beroende på vad som ska göras och servern skickar i sin tur tillbaka ett response (oftast i json).
