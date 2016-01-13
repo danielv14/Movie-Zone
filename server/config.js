@@ -22,4 +22,9 @@ module.exports = function(app) {
   // Use the logger middleware
   app.use(logger);
   app.use(allowCrossDomain);
+
+  // serve static files
+  app.use(express.static(__dirname + './../public'));
+  app.use('/bower_components', express.static(__dirname + './../bower_components'));
+  app.use('/node_modules', express.static(__dirname + './../node_modules'));
 }
