@@ -5,9 +5,11 @@ var express = require('express'),
 
 // Require other modules (files)
 var config =  require('./config')(app);
-var index =   require('./index')(app);
+// var index =   require('./index')(app);
 var api =     require('./routes/api')(app);
 var user =    require('./routes/watchlist')(app);
+
+
 
 
 app.listen(port, function () {
