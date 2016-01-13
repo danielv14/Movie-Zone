@@ -20,3 +20,7 @@ a:hover {
 .margin-left {
   margin-left: 20px;
 }
+
+.center {
+  margin: 0 auto;
+}

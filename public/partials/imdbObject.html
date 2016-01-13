@@ -8,13 +8,13 @@
     <!-- Poster -->
     <div class="col-md-4 col-lg-4">
       <div ng-if="details.Poster != 'N/A'">
-        <img ng-src="{{details.Poster}}" alt="{{details.Title}}" class="thumbnail animated zoomIn">
+        <img ng-src="{{details.Poster}}" alt="{{details.Title}}" class="thumbnail animated zoomIn center">
       </div>
       <div ng-if="details.Poster == 'N/A'">
-        <img src="img/placeholder.png" alt="{{details.Title}}" class="thumbnail img-medium animated zoomIn">
+        <img src="img/placeholder.png" alt="{{details.Title}}" class="thumbnail img-medium animated zoomIn center">
       </div>
-
-      <button ng-if="isInWatchlist != 'yes'" class="btn btn-default bt-lg" ng-click="addToWatchlist()">Add to Watchlist</button>
+      <br>
+      <button ng-if="isInWatchlist != 'yes'" class="btn btn-default bt-lg center" ng-click="addToWatchlist()">Add to Watchlist</button>
     </div> <!-- end of poster -->
 
     <!-- main details column -->
