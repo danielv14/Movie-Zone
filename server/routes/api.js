@@ -18,7 +18,7 @@ module.exports = function(app) {
 
   // Routes
 
-  router.get('/', function (req, res) {
+  router.get('/help', function (req, res) {
     res.json({
       message: 'Welcome to the API!',
       usage: {
