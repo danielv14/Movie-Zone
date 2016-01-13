@@ -62,5 +62,30 @@ angular
         }), function errorCallback(response) {
           console.log(response);
         }
+
+        // Call api about imdb ID once again to update after clicked button
+        $http({
+          method: 'GET',
+          url: 'http://localhost:1337/api/imdb/' + imdbID + ''
+        }).then(function successCallback(response) {
+          $scope.details = response.data;
+          console.log(response.data);
+        }), function errorCallback(response) {
+          console.log(response);
+        }
+        // Call watchlist again to force watchlist button to be removed.
+        $http({
+          method: 'GET',
+          url: 'http://localhost:1337/watchlist/imdb/' + imdbID + ''
+        }).then(function successCallback(response) {
+          console.log(response.data);
+          if (response.data.length === 0) {
+            $scope.isInWatchlist = 'no';
+          } else {
+            $scope.isInWatchlist = 'yes';
+          }
+        }), function errorCallback(resonse) {
+          console.log(response)
+        }
       }
     }])
