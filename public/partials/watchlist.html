@@ -12,7 +12,7 @@
       <!-- if movies are found -->
       <div ng-if="watchlistMovie != 'empty'">
         <div ng-repeat="object in watchlistMovie">
-          <div class="media animated zoomIn">
+          <div class="media animated bounceIn">
             <div class="media-left">
               <div ng-if="object.poster == 'no'"> <!-- if a poster is not a url -->
                 <a ng-href="#/imdb/{{object.imdb}}">
@@ -28,7 +28,8 @@
             <div class="media-body">
               <h4 class="media-heading">{{object.title}}</h4>
               <p>{{object.year}}</p>
-              <a ng-href='#/imdb/{{object.imdb}}'>Info</a>
+              <p><a ng-href='#/imdb/{{object.imdb}}'>Info</a></p>
+              <p><a ng-click="deleteObject()">Remove</a></p>
             </div>
           </div>
         </div>
@@ -38,7 +39,6 @@
         <p>No movies in the watchlist</p>
       </div>
       <br>
-      <a ng-if="watchlistMovie != 'empty'" class="btn btn-danger btn-sm" ng-click="deleteAllMovies()">Clear movies</a>
 
     </div>
 
@@ -49,7 +49,7 @@
       <!-- if series are found -->
       <div ng-if="watchlistSeries != 'empty'">
         <div ng-repeat="object in watchlistSeries">
-          <div class="media animated zoomIn">
+          <div class="media animated bounceIn">
             <div class="media-left">
               <div ng-if="object.poster == 'no'"> <!-- if a poster is not a url -->
                 <a ng-href="#/imdb/{{object.imdb}}">
