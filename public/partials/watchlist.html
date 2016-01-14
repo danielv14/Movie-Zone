@@ -7,7 +7,7 @@
   <div class="row">
     <!-- Movies -->
     <div class="col-md-6">
-      <h2>Movies<a ng-if="watchlistMovie != 'empty'" class="btn btn-danger btn-xs margin-left" ng-click="deleteAllMovies()">Clear movies</a></h2>
+      <h2>Movies<a ng-if="watchlistMovie != 'empty'" class="btn btn-danger btn-sm margin-left" ng-click="deleteAllMovies()"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Clear movies</a></h2>
       <br>
       <!-- if movies are found -->
       <div ng-if="watchlistMovie != 'empty'">
@@ -44,7 +44,7 @@
 
     <!-- Series -->
     <div class="col-md-6">
-      <h2>Series<a ng-if="watchlistSeries != 'empty'" class="btn btn-danger btn-xs margin-left" ng-click="deleteAllSeries()">Clear series</a></h2>
+      <h2>Series<a ng-if="watchlistSeries != 'empty'" class="btn btn-danger btn-sm margin-left" ng-click="deleteAllSeries()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Clear series</a></h2>
       <br>
       <!-- if series are found -->
       <div ng-if="watchlistSeries != 'empty'">
