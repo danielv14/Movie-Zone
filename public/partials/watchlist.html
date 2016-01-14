@@ -29,7 +29,7 @@
               <h4 class="media-heading">{{object.title}}</h4>
               <p>{{object.year}}</p>
               <p><a ng-href='#/imdb/{{object.imdb}}'>Info</a></p>
-              <p><a ng-click="deleteObject()">Remove</a></p>
+              <p><a ng-click="deleteSingleMovie(object.id)">Remove</a></p>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@
               <h4 class="media-heading">{{object.title}}</h4>
               <p>{{object.year}}</p>
               <p><a ng-href='#/imdb/{{object.imdb}}'>Info</a></p>
-              <p><a ng-click="deleteObject()">Remove</a></p>
+              <p><a ng-click="deleteSingleSeries(object.id)">Remove</a></p>
             </div>
           </div>
         </div>
