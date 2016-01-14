@@ -7,7 +7,7 @@
   <div class="row">
     <!-- Movies -->
     <div class="col-md-6">
-      <h2>Movies<a ng-if="watchlistMovie != 'empty'" class="btn btn-danger btn-sm margin-left" ng-click="deleteAllMovies()"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Clear movies</a></h2>
+      <h2>Movies <a ng-if="watchlistMovie != 'empty'" class="btn btn-danger btn-sm margin-left" data-toggle="modal" data-target="#confirmMovies"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Remove all</a></h2>
       <br>
       <!-- if movies are found -->
       <div ng-if="watchlistMovie != 'empty'">
@@ -44,7 +44,7 @@
 
     <!-- Series -->
     <div class="col-md-6">
-      <h2>Series<a ng-if="watchlistSeries != 'empty'" class="btn btn-danger btn-sm margin-left" ng-click="deleteAllSeries()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Clear series</a></h2>
+      <h2>Series <a ng-if="watchlistSeries != 'empty'" class="btn btn-danger btn-sm margin-left" data-toggle="modal" data-target="#confirmSeries"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Remove all</a></h2>
       <br>
       <!-- if series are found -->
       <div ng-if="watchlistSeries != 'empty'">
@@ -78,6 +78,46 @@
       <br>
     </div>
   </div> <!-- end of row -->
+
+
+  <!-- confirmation modals -->
+  <!-- modal for movies -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="confirmMovies">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Remove all movies?</h4>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to remove all movies from the watchlist?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="deleteAllMovies()">Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <!-- modal for series -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="confirmSeries">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Remove all series?</h4>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to remove all series from the watchlist?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="deleteAllSeries()">Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
 
   <br>
 </div> <!-- end of controller -->
