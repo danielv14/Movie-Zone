@@ -33,18 +33,16 @@ angular
         $scope.watchlistSeries = 'empty';
       } else {
         $scope.watchlistSeries = response.data;
-
       }
       console.log(response.data);
     }), function errorCallback(response) {
-      // console.log(response.data);
+          console.log(response.data);
     }
 
 
     // delete single movies
     $scope.deleteSingleMovie = function(object) {
-      console.log('delete object');
-      console.log(object);
+
       // http req to delete single object
       $http({
         method: 'DELETE',
@@ -63,14 +61,13 @@ angular
         }
         console.log(response.data);
       }), function errorCallback(response) {
-        // console.log(response.data);
+            console.log(response.data);
       }
     }
 
     // delete single Series
     $scope.deleteSingleSeries = function(object) {
-      console.log('delete object');
-      console.log(object);
+
       // http req to delete object from db
       $http({
         method: 'DELETE',
@@ -89,7 +86,7 @@ angular
         }
         console.log(response.data);
       }), function errorCallback(response) {
-        // console.log(response.data);
+            console.log(response.data);
       }
     }
 
@@ -115,7 +112,7 @@ angular
       }).then(function successCallback(response) {
         $scope.watchlistMovie = 'empty';
       }), function errorCallback(response) {
-        console.log(response)
+            console.log(response)
       }
     }
 
