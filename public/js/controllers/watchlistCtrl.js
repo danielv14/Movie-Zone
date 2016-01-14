@@ -41,13 +41,56 @@ angular
     }
 
 
-    // delete object
-    $scope.deleteObject = function() {
+    // delete single movies
+    $scope.deleteSingleMovie = function(object) {
       console.log('delete object');
-      // $http({
-      //   method: 'DELETE',
-      //   url: 'http://localhost:1337/watchlist/clear/' + $scope. + ''
-      // })
+      console.log(object);
+      // http req to delete single object
+      $http({
+        method: 'DELETE',
+        url: 'http://localhost:1337/watchlist/clear/single/' + object + ''
+      })
+      // http req to get updated info from the db about movies
+      $http({
+        method: 'GET',
+        url: 'http://localhost:1337/watchlist/find/movie'
+      }).then(function successCallback(response) {
+        // if no movies where found in the db
+        if (response.data.length === 0) {
+          $scope.watchlistMovie = 'empty';
+        } else {
+          $scope.watchlistMovie = response.data;
+        }
+        console.log(response.data);
+      }), function errorCallback(response) {
+        // console.log(response.data);
+      }
+    }
+
+    // delete single Series
+    $scope.deleteSingleSeries = function(object) {
+      console.log('delete object');
+      console.log(object);
+      // http req to delete object from db
+      $http({
+        method: 'DELETE',
+        url: 'http://localhost:1337/watchlist/clear/single/' + object + ''
+      })
+      // http req to get the series from db again
+      $http({
+        method: 'GET',
+        url: 'http://localhost:1337/watchlist/find/series'
+      }).then(function successCallback(response) {
+        // if no series in the db
+        if (response.data.length === 0) {
+          $scope.watchlistSeries = 'empty';
+        } else {
+          $scope.watchlistSeries = response.data;
+        }
+        console.log(response.data);
+      }), function errorCallback(response) {
+        // console.log(response.data);
+      }
     }
 
     // delete all series
