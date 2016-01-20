@@ -13,14 +13,11 @@
 
   <!-- Angular app -->
   <div ng-app="app">
-  <div ng-include="'partials/navbar.html'"></div>
-
-    <div class="container">
-      <div ui-view></div>
-
-    </div>
-
+    <div ng-include="'partials/navbar.html'"></div>
+    <div ui-view></div>
   </div>
+
+  <!-- scripts -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="node_modules/angular/angular.js"></script>
