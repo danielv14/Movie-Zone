@@ -42,5 +42,6 @@ a:hover {
     background-size: 100% 100%;
 }
 
-
+.brand-font {
+  font-family: 'Montserrat', sans-serif;
 }
