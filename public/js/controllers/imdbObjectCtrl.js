@@ -4,6 +4,7 @@ angular
 
     // Controller to view imdb id
     .controller('imdbObjectCtrl', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams) {
+
       // Create variable from param
       var imdbID = $stateParams.imdbID;
 
