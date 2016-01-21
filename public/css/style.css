@@ -45,3 +45,7 @@ a:hover {
 .brand-font {
   font-family: 'Montserrat', sans-serif;
 }
+
+.brand-spacing {
+  letter-spacing: 0.4em;
+}
