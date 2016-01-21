@@ -33,12 +33,14 @@ a:hover {
 }
 
 .index-jumbotron {
+  color: white;
   height: 60vh;
   background: url('../img/jumbo-index-crop.jpg') no-repeat center center;
   -webkit-background-size: 100% 100%;
     -moz-background-size: 100% 100%;
     -o-background-size: 100% 100%;
     background-size: 100% 100%;
+}
 
 
 }
