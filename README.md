@@ -6,6 +6,7 @@ Tanken är alltså att express servern ska göra http requests mot API'n och ret
 ## Node / Express Server
 Servern `server/app.js` är själva kärnan som i sin tur inkluderar en del filer. All serverkonfiguration sker i `server/config.js` som bland annat serverar angular appen från `public/` på localhost:1337. I `server/routes` finns filer för de routes Express servern använder sig av. `server/routes/api.js` är den fil som innehåller routes med prefix `/api` för att i sin tur prata med OMDb's API och returnera json-data av olika slag. `server/routes/watchlist.js` är den fil pratar RESTfully med Rethinkdb databasen och via routes med `/watchlist` som prefix.
 
+
 Backend servern och Angular appen startas med hjälp av `node server/app.js` eller `nodemon server/app.js` om utveckling ska ske då nodemon automatiskt startar om servern om ändring i filerna har skett.
 
 ## RethinkDB
