@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+  <link rel="stylesheet" href="bower_components/bootswatch/flatly/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <title>Movie Zone</title>
+</head>
+<body>
+
+
+  <!-- Angular app -->
+  <div ng-app="app">
+    <div ng-include="'partials/navbar.html'"></div>
+    <div ui-view></div>
+  </div>
+
+  <!-- scripts -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-ui-router/build/angular-ui-router.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/searchCtrl.js"></script>
+  <script src="js/controllers/imdbObjectCtrl.js"></script>
+  <script src="js/controllers/watchlistCtrl.js"></script>
+
+
+  <script>
+    // get bootstrap navbar to collapse on click
+    $(document).on('click', function(){
+      $('.collapse').collapse('hide');
+    });
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+body {
+  padding-top: 70px;
+}
+
+
+a:hover {
+  cursor: pointer;
+}
+
+.img-small {
+  max-height: 200px;
+  max-width: 100px;
+}
+
+.img-medium {
+  width: 300px;
+  min-height: 400px;
+}
+
+.margin-left {
+  margin-left: 20px;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.navbar-gap-fix {
+  margin-top: -15px;
+}
+
+.jumbotron {
+}
+
+.index-jumbotron {
+  color: white;
+  height: 60vh;
+  background: url('../img/jumbo-index-crop.jpg') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.brand-font {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.brand-spacing {
+  letter-spacing: 0.4em;
+}

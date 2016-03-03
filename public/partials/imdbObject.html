@@ -1,0 +1,91 @@
+<br>
+<div ng-controller='imdbObjectCtrl' class="container">
+  <div class="row">
+    <blockquote class="blockquote-reverse" ng-if="details.tomatoConsensus != 'N/A'">
+      <p><i>{{details.tomatoConsensus}}</i></p>
+    </blockquote>
+
+    <!-- Poster -->
+    <div class="col-md-4 col-lg-4 text-center">
+      <div ng-if="details.Poster != 'N/A'">
+        <img ng-src="{{details.Poster}}" alt="{{details.Title}}" class="thumbnail animated zoomIn center">
+      </div>
+      <div ng-if="details.Poster == 'N/A'">
+        <img src="img/placeholder.png" alt="{{details.Title}}" class="thumbnail img-medium animated zoomIn center">
+      </div>
+      <br>
+      <button ng-if="isInWatchlist != 'yes'" class="btn btn-default bt-lg center" ng-click="addToWatchlist()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add to Watchlist </button>
+    </div> <!-- end of poster -->
+
+    <!-- main details column -->
+    <div class="col-md-8 col-lg-8">
+      <h2>{{details.Title}}</h2>
+      <p ng-if="details.Release != 'N/A'"><span class="text-muted">Release Date:</span> {{ details.Released }}</p>
+      <p ng-if="details.Rated != 'N/A'"><span class="text-muted">Rated:</span> {{details.Rated}}</p>
+      <p ng-if="details.Runtime != 'N/A'"><span class="text-muted">Runtime:</span> {{details.Runtime}}</p>
+      <p ng-if="details.Awards != 'N/A'"><span class="text-muted">Awards:</span> {{details.Awards}}</p>
+
+      <p ng-if="details.Genre != 'N/A'"><span class="text-muted">Genre:</span> {{details.Genre}}</p>
+      <p ng-if="details.Director != 'N/A'"><span class="text-muted">Director:</span> {{details.Director}}</p>
+      <p ng-if="details.Writer != 'N/A'"><span class="text-muted">Writer(s):</span> {{details.Writer}}</p>
+      <p ng-if="details.Actors != 'N/A'"><span class="text-muted">Actors:</span> {{details.Actors}}</p>
+      <p ng-if="details.Production != 'N/A'"><span class="text-muted">Production:</span> {{details.Production}}</p>
+      <p ng-if="details.BoxOffice != 'N/A'"><span class="text-muted">Box Office:</span> {{details.BoxOffice}}</p>
+      <p ng-if="details.Country != 'N/A'"><span class="text-muted">Country:</span> {{details.Country}}</p>
+
+      <p ng-if="details.Plot != 'N/A'"><span class="text-muted">Plot:</span> {{details.Plot}}</p>
+      <a class="btn btn-success btn-sm"  data-toggle="modal" data-target="#ratingsModal">Ratings</a>
+      <a class="btn btn-warning btn-sm" target="_blank" ng-href='http://www.imdb.com/title/{{details.imdbID}}'>IMDb</a>
+      <a class="btn btn-danger btn-sm" target="_blank" ng-if="details.tomatoURL != 'N/A'" ng-href='{{details.tomatoURL}}'>Rotten Tomatoes</a>
+    </div> <!-- end of main details column -->
+
+    <!-- Ratings modal popup -->
+    <div class="modal fade" id="ratingsModal" tabindex="-1" role="dialog" aria-labelledby="ratingsLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="ratingsLabel">Ratings for {{details.Title}}</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <h4>IMDb</h4>
+                <p ng-if="details.imdbRating != 'N/A'"><b>Rating:</b> {{details.imdbRating}} from {{details.imdbVotes}} voters</p>
+                <p ng-if="details.imdbRating == 'N/A'"><b>Rating:</b> No Info</p>
+              </div>
+              <div class="col-md-6">
+                <h4>Metascore</h4>
+                <p ng-if="details.Metascore != 'N/A'"><b>Score: </b>{{details.Metascore}}</p>
+                <p ng-if="details.Metascore == 'N/A'"><b>Score: </b>No data</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <h4>Rotten Tomatoes</h4>
+                <p ng-if="details.tomatoFresh != 'N/A'"><b>Fresh Count: </b>{{details.tomatoFresh}}</p>
+                <p ng-if="details.tomatoFresh == 'N/A'"><b>Fresh Count: </b>No data</p>
+                <p ng-if="details.tomatoRotten != 'N/A'"><b>Rotten count: </b>{{details.tomatoRotten}}</p>
+                <p ng-if="details.tomatoRotten == 'N/A'"><b>Rotten count: </b>No data</p>
+                <p ng-if="details.tomatoMeter != 'N/A'"><b>Meter: </b>{{details.tomatoMeter}} %</p>
+                <p ng-if="details.tomatoMeter == 'N/A'"><b>Meter: </b>No data</p>
+                <p ng-if="details.tomatoRating != 'N/A'"><b>Rating: </b>{{details.tomatoRating}}</p>
+                <p ng-if="details.tomatoRating == 'N/A'"><b>Rating: </b>No ratings found</p>
+              </div>
+              <div class="col-md-6">
+                <h4>Rotten Tomatoes users</h4>
+                <p ng-if="details.tomatoUserRating != 'N/A'"><b>User Rating: </b>{{details.tomatoUserRating}}</p>
+                <p ng-if="details.tomatoUserRating == 'N/A'"><b>User Rating: </b>No ratings found</p>
+                <p ng-if="details.tomatoUserMeter != 'N/A'"><b>User Meter: </b>{{details.tomatoUserMeter}} %</p>
+                <p ng-if="details.tomatoUserMeter == 'N/A'"><b>User Meter: </b>No data</p>
+                <p ng-if="details.tomatoUserReviews != 'N/A'"><b>User Reviev: </b>{{details.tomatoUserReviews}} reviews</p>
+                <p ng-if="details.tomatoUserReviews == 'N/A'"><b>User Reviev: </b>No reviews found</p>
+              </div>
+            </div>
+          </div> <!-- end of modal body -->
+        </div> <!-- end of modal content -->
+      </div> <!-- end of modal dialog -->
+    </div> <!-- end of ratings modal -->
+  </div> <!-- end of row -->
+  <br>
+</div> <!-- end of controller ->
