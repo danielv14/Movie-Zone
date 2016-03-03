@@ -27,7 +27,7 @@ module.exports = function(app) {
         '/search/all/:search/:page':                    'search every content type at a specific page nr',
         "/search/type/:contenttype/:search":            'search for something in a content group',
         "/search/type/:contenttype/:search/:page":      'search a specific page nr',
-        "imdb/:imdbID":                                 'look up specific IMDb ID',
+        "/imdb/:imdbID":                                 'look up specific IMDb ID',
         '/series/title/:series/:season':                'list all episodes within a season. Uses OMDb API title (t=)',
         '/series/imdb/:imdbid/:season':                 'same as above only it uses IMDB ID instead of title (its more accurate)'
 
