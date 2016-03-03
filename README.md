@@ -3,14 +3,6 @@ Detta repo är tänkt att på server sidan använda Node.js och Express.js för 
 
 Tanken är alltså att express servern ska göra http requests mot API'n och returnera json-data som i sin tur angular klienten ska kunna använda.
 
-<<<<<<< HEAD
-
-### Server
-Läs README.md som finns i ```server/``` för mer info
-
-### Klient
-I Skrivande stund (08-01-2016) är det tänkt att Angular.js ska användas på klientsidan för att ta hand om den data som servern returnerar.
-=======
 ## Node / Express Server
 Servern `server/app.js` är själva kärnan som i sin tur inkluderar en del filer. All serverkonfiguration sker i `server/config.js` som bland annat serverar angular appen från `public/` på localhost:1337. I `server/routes` finns filer för de routes Express servern använder sig av. `server/routes/api.js` är den fil som innehåller routes med prefix `/api` för att i sin tur prata med OMDb's API och returnera json-data av olika slag. `server/routes/watchlist.js` är den fil pratar RESTfully med Rethinkdb databasen och via routes med `/watchlist` som prefix.
 
@@ -29,4 +21,3 @@ I mappen `public/` finns själva Angular appen som serveras som statiska filer m
 Html partials finns i `public/partials/` och controllers finns i `public/js/controllers/` där diverse olika controllers sköter olika funktioner av applikationen.   
 
 Appen använder http request i sina controllers för att prata med express servern på på antingen `/api` eller `/watchlist` beroende på vad som ska göras och servern skickar i sin tur tillbaka ett response (oftast i json).
->>>>>>> dev
